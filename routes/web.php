@@ -30,6 +30,9 @@ Route::get('/param/{id}/{number}', [HomeController::class, 'param'])->name('para
 // Route with post
 Route::post('/save', [HomeController::class, 'save'])->name('save');
 
+// Testing the custom header
+Route::get('/header', [HomeController::class, 'header'])->name('header');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

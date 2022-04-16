@@ -43,4 +43,9 @@ class HomeController extends Controller
         ]);
 
     }
+
+    public function header()
+    {
+        return view('home.deletethis');
+    }
 }
