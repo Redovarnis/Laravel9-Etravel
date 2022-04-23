@@ -15,7 +15,6 @@
 <body>
 @include("home.header")
 
-
 @section('sidebar')
     @include("home.sidebar")
 @show
@@ -25,8 +24,7 @@
 @show
 
 @yield('content')
-
-@include("home.footer")
-@yield('foot')
+        @include("home.footer")
+        @yield('foot')
 </body>
 </html>

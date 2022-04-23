@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+<div class="container-fluid">
     <main class="tm-main">
         <!-- searchbar -->
         <div class="row tm-row">
@@ -171,6 +172,5 @@
                 </nav>
             </div>
         </div>
-    </main>
 @endsection
 

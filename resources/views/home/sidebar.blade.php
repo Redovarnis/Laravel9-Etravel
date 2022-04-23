@@ -23,8 +23,8 @@
                 <li class="tm-nav-item active"><a href="index.html" class="tm-nav-link">
                     <i class="fas fa-home"></i>
                     Blogs
+                </a></li>
                 <!--
-                    </a></li>
                 <li class="tm-nav-item"><a href="post.html" class="tm-nav-link">
                     <i class="fas fa-pen"></i>
                     Single Post
