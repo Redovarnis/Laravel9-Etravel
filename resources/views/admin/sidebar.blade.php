@@ -4,7 +4,7 @@
 
         <nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.html">
+				<a class="sidebar-brand" href="http://127.0.0.1:8000/admin">
                     <span class="align-middle">AdminKit</span>
                 </a>
 

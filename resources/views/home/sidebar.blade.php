@@ -24,12 +24,6 @@
                     <i class="fas fa-home"></i>
                     Blogs
                 </a></li>
-                <!--
-                <li class="tm-nav-item"><a href="post.html" class="tm-nav-link">
-                    <i class="fas fa-pen"></i>
-                    Single Post
-                </a></li>
-                -->
                 <li class="tm-nav-item"><a href="about.html" class="tm-nav-link">
                     <i class="fas fa-users"></i>
                     About
@@ -54,10 +48,5 @@
                 <i class="fab fa-linkedin tm-social-icon"></i>
             </a>
         </div>
-        <!---
-        <p class="tm-mb-80 pr-5 text-white">
-            E-travel is a multi-purpose HTML template from TemplateMo website. Left side is a sticky menu bar. Right side content will scroll up and down.
-        </p>
-        -->
     </div>
 </header>

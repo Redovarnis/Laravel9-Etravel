@@ -18,10 +18,6 @@ class HomeController extends Controller
 
     public function param($id, $number)
     {
-        // echo "Parameter 1: ", $id;
-        // echo "<br>Parameter 2: ", $number;
-        // echo "<br>Sum Parameters: ", $id + $number;
-
         return view('home.test2',
         [
             'id' => $id,
@@ -32,10 +28,6 @@ class HomeController extends Controller
 
     public function save()
     {
-        // echo "Save Function<br>";
-        // echo "First Name: ", $_REQUEST['fname'];
-        // echo "Last Name: ", $_REQUEST['lname'];
-
         return view('home.test3',
         [
             'fname' => $_REQUEST['fname'],
