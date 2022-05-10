@@ -24,7 +24,7 @@
                                         </div>
                                         <!-- /.card-header -->
                                         <!-- form start -->
-                                        <form role="form" action="/admin/category/store".method="post">
+                                        <form role="form" action="/admin/category/store" method="post">
                                             @csrf
                                             <div class="card-body">
                                                 <div class="mb-3 form-label">
@@ -54,7 +54,7 @@
                                             <!-- /.form-body -->
 
                                             <div class="card-footer">
-                                                <button type="submit" class="btn btn-primary">Save</button>
+                                                <button class="btn btn-primary">Save</button>
                                             </div>
                                             <!-- /.card-footer -->
                                         </form>
