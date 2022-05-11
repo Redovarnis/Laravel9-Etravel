@@ -25,7 +25,7 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <table class="table table-hover my-0">
+                                                    <table class="table table-hover my-0" aria-labelledby="CategoryList">
                                                         <thead>
                                                             <tr>
                                                                 <th>Id</th>
