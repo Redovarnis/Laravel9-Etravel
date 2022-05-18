@@ -8,7 +8,7 @@
 			<main class="content">
 				<div class="container-fluid p-0">
                     <div class="btn-group mb-3" role="group" aria-label="Category Modification">
-                        <a href="/admin/category/create">
+                        <a href="{{route('admin.category.create')}}">
                             <button type="button" class="btn btn-primary">
                                 <i class="align-middle" data-feather="plus-square"></i>
                                 Add Category</button>
@@ -55,13 +55,14 @@
                                                                 <td class="d-none d-md-table-cell">{{$rs->keywords}}</td>
                                                                 <td class="d-none d-xl-table-cell">{{$rs->description}}</td>
                                                                 <td class="d-none d-md-table-cell">{{$rs->status}}</td>
-                                                                <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-sm text-none btn-warning" style="text-decoration: none">
+                                                                <td><a href="{{route('admin.category.edit', ['id'=>$rs->id])}}" class="btn btn-sm text-none btn-warning" style="text-decoration: none">
                                                                     <i class="align-middle" data-feather="edit-3"></i>Edit
                                                                 </a></td>
-                                                                <td><a href="/admin/category/delete/{{$rs->id}}" class="btn  btn-sm btn-danger" style="text-decoration: none">
+                                                                <td><a href="{{route('admin.category.destroy', ['id'=>$rs->id])}}" class="btn  btn-sm btn-danger" style="text-decoration: none"
+                                                                    onclick="return confirm('Deleting !! Are you sure ?')">
                                                                     <i class="align-middle" data-feather="trash-2"></i>Delete
                                                                 </a></td>
-                                                                <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-sm btn-success" style="text-decoration: none">
+                                                                <td><a href="{{route('admin.category.show', ['id'=>$rs->id])}}" class="btn btn-sm btn-success" style="text-decoration: none">
                                                                     <i class="align-middle" data-feather="grid"></i>Show
                                                                 </a></td>
                                                             </tr>

@@ -59,12 +59,12 @@
                                                     </table>
                                                 </div>
                                                 <div>
-                                                    <a href="/admin/category/edit/{{$data->id}}">
+                                                    <a href="{{route('admin.category.edit', ['id'=>$data->id])}}">
                                                         <i class="align-middle">
-                                                            <button class="btn btn-warning ">Edit</button>
+                                                            <button class="btn btn-warning">Edit</button>
                                                         </i>
                                                     </a>
-                                                    <a href="/admin/category/delete/{{$data->id}}">
+                                                    <a href="{{route('admin.category.destroy', ['id'=>$data->id])}}">
                                                         <i class="align-middle">
                                                             <button class="btn btn-danger">Delete</button>
                                                         </i>
