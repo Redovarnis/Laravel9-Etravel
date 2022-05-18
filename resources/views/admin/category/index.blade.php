@@ -36,10 +36,10 @@
                                                         <thead>
                                                             <tr>
                                                                 <th>Id</th>
+                                                                <th class="d-none d-md-table-cell">Image</th>
                                                                 <th class="d-none d-xl-table-cell">Title</th>
                                                                 <th class="d-none d-xl-table-cell">Keywords</th>
                                                                 <th class="d-none d-md-table-cell">Description</th>
-                                                                <th class="d-none d-md-table-cell">Image</th>
                                                                 <th class="d-none d-md-table-cell">Status</th>
                                                                 <th style="width: 40px" class="d-none d-md-table-cell">Edit</th>
                                                                 <th style="width: 40px" class="d-none d-md-table-cell">Action</th>
@@ -50,10 +50,10 @@
                                                             @foreach ($data as $rs)
                                                             <tr>
                                                                 <td> {{$rs->id}} </td>
+                                                                <td class="d-none d-md-table-cell"> {{$rs->image}}</td>
                                                                 <td class="d-none d-xl-table-cell">{{$rs->title}}</td>
                                                                 <td class="d-none d-md-table-cell">{{$rs->keywords}}</td>
                                                                 <td class="d-none d-xl-table-cell">{{$rs->description}}</td>
-                                                                <td class="d-none d-md-table-cell">{{$rs->image}}</td>
                                                                 <td class="d-none d-md-table-cell">{{$rs->status}}</td>
                                                                 <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-sm text-none btn-warning" style="text-decoration: none">
                                                                     <i class="align-middle" data-feather="edit-3"></i>Edit
