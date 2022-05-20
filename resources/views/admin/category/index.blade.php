@@ -50,7 +50,12 @@
                                                             @foreach ($data as $rs)
                                                             <tr>
                                                                 <td> {{$rs->id}} </td>
-                                                                <td class="d-none d-md-table-cell"> {{$rs->image}}</td>
+                                                                <td class="d-none d-md-table-cell">
+                                                                    @if ($rs->image)
+                                                                    <img src="{{Storage::url($rs->image)}}" alt="{{$rs->title}}" style="height: 40px" class="img-fluid">
+                                                                    @endif
+
+                                                                </td>
                                                                 <td class="d-none d-xl-table-cell">{{$rs->title}}</td>
                                                                 <td class="d-none d-md-table-cell">{{$rs->keywords}}</td>
                                                                 <td class="d-none d-xl-table-cell">{{$rs->description}}</td>

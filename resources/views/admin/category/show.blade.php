@@ -32,7 +32,11 @@
                                                         <ul class="list-group list-group-flush">
                                                             <tr>
                                                                 <th>Image:
-                                                                    <li class="list-group-item"> {{$data->image}}</li>
+                                                                    <li class="list-group-item">
+                                                                        @if ($data->image)
+                                                                        <img src="{{Storage::url($data->image)}}" alt="{{$data->title}}" style="height: 100%" class="img-fluid">
+                                                                        @endif
+                                                                        </li>
                                                                 </th>
                                                             </tr>
                                                             <tr>

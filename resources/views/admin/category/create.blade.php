@@ -24,7 +24,7 @@
                                         </div>
                                         <!-- /.card-header -->
                                         <!-- form start -->
-                                        <form role="form" action="/admin/category/store" method="post">
+                                        <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                                             @csrf
                                             <div class="card-body">
                                                 <div class="mb-3 form-label">
