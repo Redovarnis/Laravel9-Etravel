@@ -68,10 +68,9 @@
                                                             <button class="btn btn-warning">Edit</button>
                                                         </i>
                                                     </a>
-                                                    <a href="{{route('admin.category.destroy', ['id'=>$data->id])}}">
-                                                        <i class="align-middle">
-                                                            <button class="btn btn-danger">Delete</button>
-                                                        </i>
+                                                    <a href="{{route('admin.category.destroy', ['id'=>$data->id])}}" class="btn  btn-sm btn-danger" style="text-decoration: none"
+                                                        onclick="return confirm('Deleting !! Are you sure ?')">
+                                                        <i class="align-middle" data-feather="trash-2"></i>Delete
                                                     </a>
                                                 </div>
                                             </div>

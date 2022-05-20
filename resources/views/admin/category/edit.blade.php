@@ -27,6 +27,20 @@
                                         <form role="form" action="/admin/category/update/{{$data->id}}" method="post" enctype="multipart/form-data">
                                             @csrf
                                             <div class="card-body">
+
+                                                <div class="mb-3 form-label">
+                                                    <label >Parent Category</label>
+
+                                                    <select class="mb-3 form-select" name="parent_id">
+                                                        <option value="0" selected="selected">Main Category</option>
+                                                        @foreach($datalist as $rs)
+                                                            <option value="{{ $rs->id }}" @if ($rs->id == $data->parent_id) selected="selected" @endif>
+                                                                {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Title</strong></label>
                                                     <input type="text" class="form-control form-control-lg" name="title" value="{{$data->title}}">
@@ -37,7 +51,7 @@
                                                 </div>
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Description</strong></label>
-                                                    <input type="text" class="form-control" rows="2" name="description" value="{{$data->description}}">
+                                                    <input type="text" class="form-control" name="description" value="{{$data->description}}">
                                                 </div>
                                                 <div class="mb-3 form-control">
                                                     <label class="" for="image"><strong>Image</strong></label>

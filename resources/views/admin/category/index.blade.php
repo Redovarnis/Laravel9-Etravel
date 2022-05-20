@@ -37,6 +37,7 @@
                                                             <tr>
                                                                 <th>Id</th>
                                                                 <th class="d-none d-md-table-cell">Image</th>
+                                                                <th class="d-none d-md-table-cell">Parent</th>
                                                                 <th class="d-none d-xl-table-cell">Title</th>
                                                                 <th class="d-none d-xl-table-cell">Keywords</th>
                                                                 <th class="d-none d-md-table-cell">Description</th>
@@ -56,7 +57,8 @@
                                                                     @endif
 
                                                                 </td>
-                                                                <td class="d-none d-xl-table-cell">{{$rs->title}}</td>
+                                                                <td class="d-none d-xl-table-cell">{{$rs->parent_id}}</td>
+                                                                <td class="d-none d-xl-table-cell">{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}</td>
                                                                 <td class="d-none d-md-table-cell">{{$rs->keywords}}</td>
                                                                 <td class="d-none d-xl-table-cell">{{$rs->description}}</td>
                                                                 <td class="d-none d-md-table-cell">{{$rs->status}}</td>

@@ -27,6 +27,18 @@
                                         <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                                             @csrf
                                             <div class="card-body">
+
+                                                <div class="form-label">
+                                                    <label >Parent Category </label>
+
+                                                    <select class="form-control" name="parent_id">
+                                                        <option value="0" selected="selected">Main Category</option>
+                                                        @foreach ($data as $rs)
+                                                            <option value="{{ $rs->id }}"> {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title)}} </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Title</strong></label>
                                                     <input type="text" class="form-control form-control-lg" name="title" placeholder="Title">
@@ -37,7 +49,7 @@
                                                 </div>
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Description</strong></label>
-                                                    <textarea type="text" class="form-control" rows="2" placeholder="Textarea"></textarea>
+                                                    <input type="text" class="form-control form-control-lg" name="description" placeholder="Description">
                                                 </div>
                                                 <div class="mb-3 form-control">
                                                     <label class="" for="image"><strong>Image</strong></label>
