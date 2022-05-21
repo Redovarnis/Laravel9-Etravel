@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Edit Category: ' .$data->title)
+@section('title', 'Edit Place: ' .$data->title)
 
 @section('content')
 
@@ -8,7 +8,7 @@
 			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3 "> Edit Category: <div class="text-primary btn badge bg-white text-dark ms-2 " > {{$data->title}} </div> </h1>
+					<h1 class="h3 mb-3 "> Edit Place: <div class="text-primary btn badge bg-white text-dark ms-2 " > {{$data->title}} </div> </h1>
 
 					<div class="row">
 						<div class="col-12">
@@ -20,21 +20,23 @@
                                     <div class="card ">
                                         <!-- card-header -->
                                         <div class="card-header">
-                                            <strong class="card-title mb-0">Category Elements</strong>
+                                            <strong class="card-title mb-0">Place Elements</strong>
                                         </div>
                                         <!-- /.card-header -->
                                         <!-- form start -->
-                                        <form role="form" action="{{route('admin.category.update', ['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                                        <form role="form" action=" {{route('admin.place.update', ['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                             @csrf
                                             <div class="card-body">
 
                                                 <div class="mb-3 form-label">
-                                                    <label >Parent Category</label>
+                                                    <label >Parent Place</label>
 
-                                                    <select class="mb-3 form-select" name="parent_id">
-                                                        <option value="0" selected="selected">Main Category</option>
+                                                    <select class="mb-3 form-select" name="category_id">
                                                         @foreach($datalist as $rs)
-                                                            <option value="{{ $rs->id }}" @if ($rs->id == $data->parent_id) selected="selected" @endif>
+                                                            <option value="{{ $rs->id }}"
+                                                                @if ($rs->id == $data->category_id)
+                                                                    selected="selected"
+                                                                @endif>
                                                                 {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}
                                                             </option>
                                                         @endforeach
@@ -52,6 +54,22 @@
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Description</strong></label>
                                                     <input type="text" class="form-control" name="description" value="{{$data->description}}">
+                                                </div>
+                                                <div class="mb-3 form-label">
+                                                    <label for="email"><strong>City</strong></label>
+                                                    <input type="text" class="form-control" name="city" value="{{$data->city}}">
+                                                </div>
+                                                <div class="mb-3 form-label">
+                                                    <label for="email"><strong>Country</strong></label>
+                                                    <input type="text" class="form-control" name="country" value="{{$data->country}}">
+                                                </div>
+                                                <div class="mb-3 form-label">
+                                                    <label for="email"><strong>Location</strong></label>
+                                                    <input type="text" class="form-control" name="location" value="{{$data->location}}">
+                                                </div>
+                                                <div class="mb-3 form-label">
+                                                    <label for="email"><strong>Detail</strong></label>
+                                                    <input type="text" class="form-control" name="detail" value="{{$data->detail}}">
                                                 </div>
                                                 <div class="mb-3 form-control">
                                                     <label class="" for="image"><strong>Image</strong></label>

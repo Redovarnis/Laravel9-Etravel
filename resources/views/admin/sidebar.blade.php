@@ -52,9 +52,9 @@
                         </a>
 					</li>
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="/admin/post">
+						<a class="sidebar-link" href="/admin/place">
                             <i class="align-middle text-info" data-feather="send"></i>
-                            <span class="align-middle">Posts</span>
+                            <span class="align-middle">Places</span>
                         </a>
 					</li>
                     <li class="sidebar-item">

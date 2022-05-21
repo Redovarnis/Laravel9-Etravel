@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Edit Category: ' .$data->title)
+@section('title', 'Add Place')
 
 @section('content')
 
@@ -8,7 +8,7 @@
 			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3 "> Edit Category: <div class="text-primary btn badge bg-white text-dark ms-2 " > {{$data->title}} </div> </h1>
+					<h1 class="h3 mb-3">Add Place</h1>
 
 					<div class="row">
 						<div class="col-12">
@@ -20,47 +20,59 @@
                                     <div class="card ">
                                         <!-- card-header -->
                                         <div class="card-header">
-                                            <strong class="card-title mb-0">Category Elements</strong>
+                                            <strong class="card-title mb-0">Place Elements</strong>
                                         </div>
                                         <!-- /.card-header -->
                                         <!-- form start -->
-                                        <form role="form" action="{{route('admin.category.update', ['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                                        <form role="form" action="{{route('admin.place.store')}}" method="post" enctype="multipart/form-data">
                                             @csrf
                                             <div class="card-body">
 
-                                                <div class="mb-3 form-label">
-                                                    <label >Parent Category</label>
+                                                <div class="form-label">
+                                                    <label >Parent Place </label>
 
-                                                    <select class="mb-3 form-select" name="parent_id">
-                                                        <option value="0" selected="selected">Main Category</option>
-                                                        @foreach($datalist as $rs)
-                                                            <option value="{{ $rs->id }}" @if ($rs->id == $data->parent_id) selected="selected" @endif>
-                                                                {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}
-                                                            </option>
+                                                    <select class="form-control" name="category_id">
+                                                        @foreach ($data as $rs)
+                                                            <option value="{{ $rs->id }}"> {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title)}} </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
 
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Title</strong></label>
-                                                    <input type="text" class="form-control form-control-lg" name="title" value="{{$data->title}}">
+                                                    <input type="text" class="form-control form-control-lg" name="title" placeholder="Title">
                                                 </div>
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Keywords</strong></label>
-                                                    <input type="text" class="form-control form-control-lg" name="keywords" value="{{$data->keywords}}">
+                                                    <input type="text" class="form-control form-control-lg" name="keywords" placeholder="Keywords">
                                                 </div>
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Description</strong></label>
-                                                    <input type="text" class="form-control" name="description" value="{{$data->description}}">
+                                                    <input type="text" class="form-control form-control-lg" name="description" placeholder="Description">
+                                                </div>
+                                                <div class="mb-3 form-label">
+                                                    <label for="email"><strong>City</strong></label>
+                                                    <input type="text" class="form-control form-control-lg" name="city" placeholder="city">
+                                                </div>
+                                                <div class="mb-3 form-label">
+                                                    <label for="email"><strong>Country</strong></label>
+                                                    <input type="text" class="form-control form-control-lg" name="country" placeholder="country">
+                                                </div>
+                                                <div class="mb-3 form-label">
+                                                    <label for="email"><strong>Location</strong></label>
+                                                    <input type="text" class="form-control form-control-lg" name="location" placeholder="location">
+                                                </div>
+                                                <div class="mb-3 form-label">
+                                                    <label for="email"><strong>Detail</strong></label>
+                                                    <input type="text" class="form-control form-control-lg" name="detail" placeholder="Detail">
                                                 </div>
                                                 <div class="mb-3 form-control">
                                                     <label class="" for="image"><strong>Image</strong></label>
-                                                    <input type="file" class="form-control form-control-lg" name="image" value="{{$data->image}}">
+                                                    <input type="file" class="form-control form-control-lg" name="image">
                                                 </div>
                                                 <div class="mb-3 form-label">
                                                     <label><strong>Select</strong></label>
                                                     <select class="form-select mb-3" name="status">
-                                                        <option hidden selected>{{$data->status}}</option>
                                                         <option>True</option>
                                                         <option>False</option>
                                                     </select>
@@ -69,7 +81,7 @@
                                             <!-- /.form-body -->
 
                                             <div class="card-footer">
-                                                <button class="btn btn-warning">Update</button>
+                                                <button class="btn btn-primary">Save</button>
                                             </div>
                                             <!-- /.card-footer -->
                                         </form>

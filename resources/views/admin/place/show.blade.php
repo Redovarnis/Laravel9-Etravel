@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Edit Category: ' .$data->title)
+@section('title', 'Edit Place: ' .$data->title)
 
 @section('content')
 
@@ -8,7 +8,7 @@
 			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3 "> Edit Category: <div class="text-primary btn badge bg-white text-dark ms-2 " > {{$data->title}} </div> </h1>
+					<h1 class="h3 mb-3 "> Edit Place: <div class="text-primary btn badge bg-white text-dark ms-2 " > {{$data->title}} </div> </h1>
 
 					<div class="row">
 						<div class="col-12">
@@ -36,7 +36,12 @@
                                                                         @if ($data->image)
                                                                         <img src="{{Storage::url($data->image)}}" alt="{{$data->title}}" style="height: 500px" class="img-fluid">
                                                                         @endif
-                                                                    </li>
+                                                                        </li>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Category Id:
+                                                                    <li class="list-group-item"> {{$data->category_id}}</li>
                                                                 </th>
                                                             </tr>
                                                             <tr>
@@ -55,6 +60,26 @@
                                                                 </th>
                                                             </tr>
                                                             <tr>
+                                                                <th>Country:
+                                                                    <li class="list-group-item"> {{$data->country}}</li>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>City:
+                                                                    <li class="list-group-item"> {{$data->city}}</li>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Location:
+                                                                    <li class="list-group-item"> {{$data->location}}</li>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Detail:
+                                                                    <li class="list-group-item"> {{$data->detail}}</li>
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
                                                                 <th>Status:
                                                                     <li class="list-group-item"> {{$data->status}}</li>
                                                                 </th>
@@ -63,12 +88,12 @@
                                                     </table>
                                                 </div>
                                                 <div>
-                                                    <a href="{{route('admin.category.edit', ['id'=>$data->id])}}">
+                                                    <a href="{{route('admin.place.edit', ['id'=>$data->id])}}">
                                                         <i class="align-middle">
                                                             <button class="btn btn-warning">Edit</button>
                                                         </i>
                                                     </a>
-                                                    <a href="{{route('admin.category.destroy', ['id'=>$data->id])}}" class="btn  btn-sm btn-danger" style="text-decoration: none"
+                                                    <a href="{{route('admin.place.destroy', ['id'=>$data->id])}}" class="btn  btn-sm btn-danger" style="text-decoration: none"
                                                         onclick="return confirm('Deleting !! Are you sure ?')">
                                                         <i class="align-middle" data-feather="trash-2"></i>Delete
                                                     </a>

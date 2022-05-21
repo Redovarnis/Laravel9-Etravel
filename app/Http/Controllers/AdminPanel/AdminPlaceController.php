@@ -4,26 +4,12 @@ namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Place;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class CategoryController extends Controller
+class AdminPlaceController extends Controller
 {
-
-    protected $appends = [
-        'getParentsTree'
-    ];
-
-    public static function getParentsTree($category, $title)
-    {
-        if ($category->parent_id == 0)
-        {
-            return $title;
-        }
-        $parent = Category::find($category->parent_id);
-        $title = $parent->title . ' > ' . $title;
-        return CategoryController::getParentsTree($parent, $title);
-    }
 
     /**
      * Display a listing of the resource.
@@ -33,8 +19,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $data = Category::all();
-        return view('admin.category.index', [
+        $data = Place::all();
+        return view('admin.place.index', [
             'data' => $data
         ]);
     }
@@ -48,7 +34,7 @@ class CategoryController extends Controller
     {
         //
         $data = Category::all();
-        return view('admin.category.create', [
+        return view('admin.place.create', [
             'data' => $data
         ]);
     }
@@ -62,30 +48,35 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        $data = new Category();
-        $data->parent_id = $request->parent_id;
+        $data = new Place();
+        $data->category_id = $request->category_id;
+        $data->user_id = 0; //$request->user_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->city = $request->city;
+        $data->country = $request->country;
+        $data->location = $request->location;
         $data->status = $request->status;
         if ($request->file('image')) {
             $data->image = $request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/category');
+        return redirect('admin/place');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Place  $place
      * @return \Illuminate\Http\Response
      */
-   public function show(Category $category, $id)
+   public function show(Place $place, $id)
     {
         //
-        $data = Category::find($id);
-        return view('admin.category.show', [
+        $data = Place::find($id);
+        return view('admin.place.show', [
             'data' => $data
         ]);
     }
@@ -95,15 +86,17 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param  \App\Models\Place  $place
+     * I added the Category model to the function as an extra parameter to get the category name for the edit view.
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category, $id)
+    public function edit(Place $place, Category $category, $id)
     {
         //
-        $data = Category::find($id);
+        $data = Place::find($id);
         $datalist = Category::all();
-        return view('admin.category.edit', [
+        return view('admin.place.edit', [
             'data' => $data,
             'datalist' => $datalist
         ]);
@@ -113,17 +106,22 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Place  $place
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category, $id)
+    public function update(Request $request, Place $place, $id)
     {
         //
-        $data = Category::find($request->id);
-        $data->parent_id = $request->parent_id;
+        $data = Place::find($request->id);
+        $data->category_id = $request->category_id;
+        $data->user_id = 0; //$request->user_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->city = $request->city;
+        $data->country = $request->country;
+        $data->location = $request->location;
         $data->status = $request->status;
         if ($request->file('image')) {
             if ($data->image && Storage::disk('public')->exists($data->image)) {
@@ -132,23 +130,23 @@ class CategoryController extends Controller
             $data->image = $request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/category');
+        return redirect('admin/place');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Place  $place
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category, $id)
+    public function destroy(Place $place, $id)
     {
         //
-        $data = Category::find($id);
+        $data = Place::find($id);
         if ($data->image && Storage::disk('public')->exists($data->image)) {
             Storage::delete($data->image);
         }
         $data->delete();
-        return redirect('admin/category');
+        return redirect('admin/place');
     }
 }
