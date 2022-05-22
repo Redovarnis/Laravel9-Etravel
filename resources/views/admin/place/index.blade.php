@@ -59,7 +59,9 @@
                                                                     <img src="{{Storage::url($rs->image)}}" alt="{{$rs->title}}" style="height: 40px" class="img-fluid">
                                                                     @endif
                                                                 </td>
-                                                                <td class="d-none d-md-table-cell">{{$rs->category_id}}</td>
+                                                                <td class="d-none d-md-table-cell">
+                                                                    {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category, $rs->category->title) }}
+                                                                </td>
                                                                 <td class="d-none d-xl-table-cell">{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}</td>
                                                                 <td class="d-none d-md-table-cell">{{$rs->keywords}}</td>
                                                                 <td class="d-none d-xl-table-cell">{{$rs->description}}</td>

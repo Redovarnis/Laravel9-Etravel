@@ -40,8 +40,10 @@
                                                                 </th>
                                                             </tr>
                                                             <tr>
-                                                                <th>Category Id:
-                                                                    <li class="list-group-item"> {{$data->category_id}}</li>
+                                                                <th>Category:
+                                                                    <li class="list-group-item">
+                                                                        {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data->category, $data->category->title) }}
+                                                                    </li>
                                                                 </th>
                                                             </tr>
                                                             <tr>
