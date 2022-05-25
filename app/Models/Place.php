@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Place extends Model
 {
     use HasFactory;
-    #many To One
+    # many To One
     public function category()
     {
         return $this->belongsTo(Category::class);

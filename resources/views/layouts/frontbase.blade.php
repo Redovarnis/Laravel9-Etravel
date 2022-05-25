@@ -1,14 +1,32 @@
+<!-- === BEGIN HEADER === -->
 <!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
+<!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
     <title>@yield("title")</title>
-    <link rel="stylesheet" href="{{asset('assets')}}/fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
-    <link href="{{asset('assets')}}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{asset('assets')}}/css/templatemo-xtra-blog.css" rel="stylesheet">
-
+    <!-- Meta -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap.css" rel="stylesheet">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/nexus.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/custom.css" rel="stylesheet">
+    <!-- Google Fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans" type="text/css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
     @yield("head")
 </head>
 

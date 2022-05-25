@@ -7,170 +7,163 @@
 @endsection
 
 @section('content')
-<div class="container-fluid">
-    <main class="tm-main">
-        <!-- searchbar -->
-        <div class="row tm-row">
-            <article class="col-12 col-md-6 tm-post">
-                <hr class="tm-hr-primary">
-                <a href="post.html" class="effect-lily tm-post-link tm-pt-60">
-                    <div class="tm-post-link-inner">
-                        <img src="{{asset('assets')}}/img/img-01.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <span class="position-absolute tm-new-badge">New</span>
-                    <h2 class="tm-pt-30 tm-color-primary tm-post-title">Simple and useful HTML layout</h2>
-                </a>
-                <p class="tm-pt-30">
-                    There is a clickable image with beautiful hover effect and active title link for each post item.
-                    Left side is a sticky menu bar. Right side is a blog content that will scroll up and down.
-                </p>
-                <div class="d-flex justify-content-between tm-pt-45">
-                    <span class="tm-color-primary">Travel . Events</span>
-                    <span class="tm-color-primary">June 24, 2020</span>
+    <!-- === BEGIN 3,474.5 === -->
+    <div class="container background-gray-lighter">
+        <div class="row margin-vert-40">
+            <div class="col-md-4">
+                <div class="col-md-4">
+                    <i class="fa-clock-o fa-5x color-primary"></i>
                 </div>
-                <hr>
-                <div class="d-flex justify-content-between">
-                    <span>36 comments</span>
-                    <span>by Admin Nat</span>
+                <div class="col-md-8">
+                    <h2 class="margin-top-5 margin-bottom-0">3,474.5</h2>
+                    <p>WORKING HOURS</p>
                 </div>
-            </article>
-            <article class="col-12 col-md-6 tm-post">
-                <hr class="tm-hr-primary">
-                <a href="post.html" class="effect-lily tm-post-link tm-pt-60">
-                    <div class=" tm-post-link-inner">
-                        <img src="{{asset('assets')}}/img/img-02.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <span class="position-absolute tm-new-badge">New</span>
-                    <h2 class="tm-pt-30 tm-color-primary tm-post-title">Multi-purpose blog template</h2>
-                </a>
-                <p class="tm-pt-30">
-                    <a rel="nofollow" href="https://templatemo.com/tm-553-xtra-blog" target="_blank">Xtra Blog</a>  is a multi-purpose HTML CSS template from TemplateMo website.
-                    Blog list, single post, about, contact pages are included. Left sidebar fixed width and content area is a fluid full-width.
-                </p>
-                <div class="d-flex justify-content-between tm-pt-45">
-                    <span class="tm-color-primary">Creative . Design . Business</span>
-                    <span class="tm-color-primary">June 16, 2020</span>
-                </div>
-                <hr>
-                <div class="d-flex justify-content-between">
-                    <span>48 comments</span>
-                    <span>by Admin Sam</span>
-                </div>
-            </article>
-            <article class="col-12 col-md-6 tm-post">
-                <hr class="tm-hr-primary">
-                <a href="post.html" class="effect-lily tm-post-link tm-pt-20">
-                    <div class="tm-post-link-inner">
-                        <img src="{{asset('assets')}}/img/img-03.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <h2 class="tm-pt-30 tm-color-primary tm-post-title">How can you apply Xtra Blog</h2>
-                </a>
-                <p class="tm-pt-30">
-                    You are <u>allowed</u> to convert this template as any kind of CMS theme or template for your custom website builder.
-                    You can also use this for your clients. Thank you for choosing us.
-                </p>
-                <div class="d-flex justify-content-between tm-pt-45">
-                    <span class="tm-color-primary">Music . Audio</span>
-                    <span class="tm-color-primary">June 11, 2020</span>
-                </div>
-                <hr>
-                <div class="d-flex justify-content-between">
-                    <span>24 comments</span>
-                    <span>by John Walker</span>
-                </div>
-            </article>
-            <article class="col-12 col-md-6 tm-post">
-                <hr class="tm-hr-primary">
-                <a href="post.html" class="effect-lily tm-post-link tm-pt-20">
-                    <div class="tm-post-link-inner">
-                        <img src="{{asset('assets')}}/img/img-04.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <h2 class="tm-pt-30 tm-color-primary tm-post-title">A little restriction to apply</h2>
-                </a>
-                <p class="tm-pt-30">
-                    You are <u>not allowed</u> to re-distribute this template as a downloadable ZIP file on any template collection
-                    website. This is strongly prohibited as we worked hard for this template. Please contact TemplateMo for more information.
-                </p>
-                <div class="d-flex justify-content-between tm-pt-45">
-                    <span class="tm-color-primary">Artworks . Design</span>
-                    <span class="tm-color-primary">June 4, 2020</span>
-                </div>
-                <hr>
-                <div class="d-flex justify-content-between">
-                    <span>72 comments</span>
-                    <span>by Admin Sam</span>
-                </div>
-            </article>
-            <article class="col-12 col-md-6 tm-post">
-                <hr class="tm-hr-primary">
-                <a href="post.html" class="effect-lily tm-post-link tm-pt-20">
-                    <div class="tm-post-link-inner">
-                        <img src="{{asset('assets')}}/img/img-05.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <h2 class="tm-pt-30 tm-color-primary tm-post-title">Color hexa values of Xtra Blog</h2>
-                </a>
-                <p class="tm-pt-30">
-                    If you wish to kindly support us, please contact us or contribute a small PayPal amount to info [at] templatemo.com that is helpful for us.
-                    <br>
-                    Title #099 New #0CC <br>
-                    <span class="tm-color-primary">Text #999 Line #CCC Next #0CC Prev #F0F0F0</span>
-                </p>
-                <div class="d-flex justify-content-between tm-pt-45">
-                    <span class="tm-color-primary">Creative . Video . Audio</span>
-                    <span class="tm-color-primary">May 31, 2020</span>
-                </div>
-                <hr>
-                <div class="d-flex justify-content-between">
-                    <span>84 comments</span>
-                    <span>by Admin Sam</span>
-                </div>
-            </article>
-            <article class="col-12 col-md-6 tm-post">
-                <hr class="tm-hr-primary">
-                <a href="post.html" class="effect-lily tm-post-link tm-pt-20">
-                    <div class="tm-post-link-inner">
-                        <img src="{{asset('assets')}}/img/img-06.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <h2 class="tm-pt-30 tm-color-primary tm-post-title">Donec convallis varius risus</h2>
-                </a>
-                <p class="tm-pt-30">
-                    Quisque id ipsum vel sem maximus vulputate sed quis velit. Nunc vel turpis eget orci elementum cursus vitae in eros. Quisque vulputate nulla ut dolor consectetur luctus.
-                </p>
-                <div class="d-flex justify-content-between tm-pt-45">
-                    <span class="tm-color-primary">Visual . Artworks</span>
-                    <span class="tm-color-primary">June 16, 2020</span>
-                </div>
-                <hr>
-                <div class="d-flex justify-content-between">
-                    <span>96 comments</span>
-                    <span>by Admin Sam</span>
-                </div>
-            </article>
-        </div>
-        <div class="row tm-row tm-mt-100 tm-mb-75">
-            <div class="tm-prev-next-wrapper">
-                <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">Prev</a>
-                <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next">Next</a>
             </div>
-            <div class="tm-paging-wrapper">
-                <span class="d-inline-block mr-3">Page</span>
-                <nav class="tm-paging-nav d-inline-block">
-                    <ul>
-                        <li class="tm-paging-item active">
-                            <a href="#" class="mb-2 tm-btn tm-paging-link">1</a>
-                        </li>
-                        <li class="tm-paging-item">
-                            <a href="#" class="mb-2 tm-btn tm-paging-link">2</a>
-                        </li>
-                        <li class="tm-paging-item">
-                            <a href="#" class="mb-2 tm-btn tm-paging-link">3</a>
-                        </li>
-                        <li class="tm-paging-item">
-                            <a href="#" class="mb-2 tm-btn tm-paging-link">4</a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="col-md-4">
+                <div class="col-md-4">
+                    <i class="fa-tachometer fa-5x color-primary"></i>
+                </div>
+                <div class="col-md-8">
+                    <h2 class="margin-top-5 margin-bottom-0">3,474.5</h2>
+                    <p>WORKING HOURS</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-4">
+                    <i class="fa-users fa-5x color-primary"></i>
+                </div>
+                <div class="col-md-8">
+                    <h2 class="margin-top-5 margin-bottom-0">3,474.5</h2>
+                    <p>WORKING HOURS</p>
+                </div>
             </div>
         </div>
+    </div>
+    <!-- === END 3,474.5 === -->
+    <!-- === BEGIN Welcome to Lifestyle === -->
+    <div class="container background-white">
+        <div class="row margin-vert-30">
+            <!-- Main Text -->
+            <div class="col-md-12">
+                <h2 class="text-center">Welcome to LifeStyle</h2>
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                    lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                <p class="text-center">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+                    augue duis dolore te feugait nulla facilisi. Cras non sem sem, at eleifend mi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Curabitur eget nisl
+                    a risus.</p>
+            </div>
+            <!-- End Main Text -->
+        </div>
+    </div>
+    <!-- === END Welcome to Lifestyle === -->
+    <!-- BEGIN Portfolio Wrapper-->
+    <div class="container background-gray-lighter">
+        <div class="row padding-vert-20">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-10">
+                <!-- Portfolio -->
+                <ul class="portfolio-group">
+                    <!-- Portfolio Item -->
+                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
+                        <a href="#">
+                            <figure class="animate fadeInLeft">
+                                <img alt="image1" src="{{asset('assets')}}/img/frontpage/image1.jpg">
+                                <figcaption>
+                                    <h3>Placerat facer possim</h3>
+                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <!-- //Portfolio Item// -->
+                    <!-- Portfolio Item -->
+                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
+                        <a href="#">
+                            <figure class="animate fadeInRight">
+                                <img alt="image2" src="{{asset('assets')}}/img/frontpage/image2.jpg">
+                                <figcaption>
+                                    <h3>Placerat facer possim</h3>
+                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <!-- //Portfolio Item// -->
+                    <!-- Portfolio Item -->
+                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
+                        <a href="#">
+                            <figure class="animate fadeInLeft">
+                                <img alt="image3" src="{{asset('assets')}}/img/frontpage/image3.jpg">
+                                <figcaption>
+                                    <h3>Placerat facer possim</h3>
+                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <!-- //Portfolio Item// -->
+                    <!-- Portfolio Item -->
+                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
+                        <a href="#">
+                            <figure class="animate fadeInRight">
+                                <img alt="image4" src="{{asset('assets')}}/img/frontpage/image4.jpg">
+                                <figcaption>
+                                    <h3>Placerat facer possim</h3>
+                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <!-- //Portfolio Item// -->
+                    <!-- Portfolio Item -->
+                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
+                        <a href="#">
+                            <figure class="animate fadeInLeft">
+                                <img alt="image5" src="{{asset('assets')}}/img/frontpage/image5.jpg">
+                                <figcaption>
+                                    <h3>Placerat facer possim</h3>
+                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <!-- //Portfolio Item// -->
+                    <!-- Portfolio Item -->
+                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
+                        <a href="#">
+                            <figure class="animate fadeInRight">
+                                <img alt="image6" src="{{asset('assets')}}/img/frontpage/image6.jpg">
+                                <figcaption>
+                                    <h3>Placerat facer possim</h3>
+                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <!-- //Portfolio Item// -->
+                </ul>
+                <!-- End Portfolio -->
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+    <!-- END Portfolio Wrapper-->
+    <!-- === BEGIN WE'RE HIRING === -->
+    <div class="container background-white">
+        <div class="row padding-vert-40">
+            <div class="col-md-12">
+                <h2 class="animate fadeIn text-center">WE ARE CURRENTLY HIRING!</h2>
+                <p class="animate fadeIn text-center">If you like to work with a creative team in a lively and friendly enviroment then call us today!.</p>
+                <p class="animate fadeInUp text-center">
+                    <button class="btn btn-primary btn-lg" type="button">View Details</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- === END WE'RE HIRING === -->
+</div>
+<!-- === END CONTENT === -->
 @endsection
 
