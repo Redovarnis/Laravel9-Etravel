@@ -1,5 +1,3 @@
-<!-- === BEGIN CONTENT === -->
-    <div id="content">
         <!-- === BEGIN SLIDER === -->
         <div class="container no-padding">
             <div class="row">

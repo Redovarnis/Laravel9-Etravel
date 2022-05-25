@@ -8,7 +8,7 @@
 			<main class="content">
 				<div class="container-fluid p-0">
                     <div class="btn-group mb-3" role="group" aria-label="Place Modification">
-                        <a href="{{route('admin.place.create')}}">
+                        <a href="{{route('admin.place.store')}}">
                             <button type="button" class="btn btn-primary">
                                 <i class="align-middle" data-feather="plus-square"></i>
                                 Add Place</button>
@@ -37,6 +37,7 @@
                                                             <tr>
                                                                 <th>Id</th>
                                                                 <th class="d-none d-md-table-cell">Image</th>
+                                                                <th class="d-none d-md-table-cell">Image Gallery</th>
                                                                 <th class="d-none d-md-table-cell">Category</th>
                                                                 <th class="d-none d-xl-table-cell">Title</th>
                                                                 <th class="d-none d-xl-table-cell">Keywords</th>
@@ -59,6 +60,12 @@
                                                                     <img src="{{Storage::url($rs->image)}}" alt="{{$rs->title}}" style="height: 40px" class="img-fluid">
                                                                     @endif
                                                                 </td>
+                                                                <td>
+                                                                    <a href="{{route('admin.image.index', ['pid'=>$rs->id])}}"
+                                                                        onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+                                                                        <img src="{{asset('assets')}}/admin/img/icons/gallery.png" style="height: 40px">
+                                                                    </a>
+                                                                </td>
                                                                 <td class="d-none d-md-table-cell">
                                                                     {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs->category, $rs->category->title) }}
                                                                 </td>
@@ -80,7 +87,7 @@
                                                                     <i class="align-middle" data-feather="grid"></i>Show
                                                                 </a></td>
                                                             </tr>
-                                                        @endforeach
+                                                            @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>

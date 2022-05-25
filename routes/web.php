@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
 use App\Http\Controllers\AdminPanel\AdminPlaceController as AdminPlaceController;
+use App\Http\Controllers\AdminPanel\ImageController as ImageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,7 +43,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 // ****************** ADMIN PANEL ROUTES ****************************************
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route:: get('/admin', [AdminHomeController::class, 'index'])->name('index');
+    Route:: get('/', [AdminHomeController::class, 'index'])->name('index');
     // ****************** ADMIN CATEGORY ROUTES ****************************************
     Route::prefix('category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
         Route::get('/', 'index')->name('index');
@@ -63,5 +64,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/update/{id}', 'update')->name('update');
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
+    });
+
+    // ****************** ADMIN PLACE IMAGE GALLERY ROUTES ****************************************
+    Route::prefix('/image')->name('image.')->controller(ImageController::class)->group(function () {
+        Route::get('/{pid}', 'index')->name('index');
+        Route::post('/store/{pid}', 'store')->name('store');
+        Route::get('/destroy/{pid}/{id}', 'destroy')->name('destroy');
     });
 });

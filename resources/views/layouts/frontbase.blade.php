@@ -37,6 +37,8 @@
     @include("home.sidebar")
 @show
 
+<!-- === BEGIN CONTENT === -->
+<div id="content">
 @section('slider')
     @include('home.slider')
 @show
