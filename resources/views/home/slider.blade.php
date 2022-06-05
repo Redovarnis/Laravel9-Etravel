@@ -13,18 +13,12 @@
                     <!-- End Carousel Indicators -->
                     <!-- Carousel Images -->
                     <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="{{asset('assets')}}/img/slideshow/slide1.jpg">
-                        </div>
-                        <div class="item">
-                            <img src="{{asset('assets')}}/img/slideshow/slide2.jpg">
-                        </div>
-                        <div class="item">
-                            <img src="{{asset('assets')}}/img/slideshow/slide3.jpg">
-                        </div>
-                        <div class="item">
-                            <img src="{{asset('assets')}}/img/slideshow/slide4.jpg">
-                        </div>
+                        @foreach ($sliderdata as $rs)
+                            <div class="item {{$rs['id']==1?'active':''}}">
+                                <img src="{{Storage::url($rs->image)}}" style="width: 1080px; height: 540px">
+                            </div>
+                        @endforeach
+
                     </div>
                     <!-- End Carousel Images -->
                     <!-- Carousel Controls -->

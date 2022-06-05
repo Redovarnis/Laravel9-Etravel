@@ -8,7 +8,7 @@
 			<main class="content">
 				<div class="container-fluid p-0">
                     <div class="btn-group mb-3" role="group" aria-label="Place Modification">
-                        <a href="{{route('admin.place.store')}}">
+                        <a href="{{route('admin.place.create')}}">
                             <button type="button" class="btn btn-primary">
                                 <i class="align-middle" data-feather="plus-square"></i>
                                 Add Place</button>
