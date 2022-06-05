@@ -53,10 +53,6 @@
                                                 </div>
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Description</strong></label>
-                                                    <input type="text" class="form-control" name="description" value="{{$data->description}}">
-                                                </div>
-                                                <div class="mb-3 form-label">
-                                                    <label for="email"><strong>Description</strong></label>
                                                     <textarea class="form-control" id="description" name="description">
                                                         {{$data->description}}
                                                     </textarea>

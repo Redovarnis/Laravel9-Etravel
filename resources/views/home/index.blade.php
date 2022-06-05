@@ -54,10 +54,43 @@
             </div>
             <!-- End Main Text -->
         </div>
+        <div id="carousel-example-2" class="carousel slide alternative" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                @foreach ($placelist as $rs)
+                    <li data-target="#carousel-example-2" data-slide-to="{{$rs['id']-1}}" class="{{$rs['id']==1?'active':''}}"></li>
+                    @break($rs['id']==$total/4+1)
+                @endforeach
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                @foreach ($placelist2 as $rs)
+                    @if ($loop->first)
+                        <div class="item active">
+                    @else
+                        <div class="item">
+                    @endif
+                    <div class="row">
+                        @foreach ($rs as $singlers)
+                            <div class="col-md-3"><img src="{{Storage::url($singlers->image)}}" style="max-width:100%;"></div>
+                        @endforeach
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-2" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-2" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
     </div>
     <!-- === END Welcome to Lifestyle === -->
     <!-- BEGIN Portfolio Wrapper-->
     <div class="container background-gray-lighter">
+
         <div class="row padding-vert-20">
             <div class="col-md-1">
             </div>

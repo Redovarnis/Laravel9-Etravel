@@ -9,9 +9,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $sliderdata = Place::limit(4)->get();
+        $total = 4;
+        $sliderdata = Place::limit($total)->get();
+        $placelist = Place::limit($total)->get();
+        $placelist2 = Place::where('category_id', 1)->get()->chunk(4);
         return view('home.index', [
-            'sliderdata'=>$sliderdata
+            'sliderdata'=>$sliderdata,
+            'placelist' => $placelist,
+            'placelist2' => $placelist2,
+            'total' => $total,
         ]);
     }
 

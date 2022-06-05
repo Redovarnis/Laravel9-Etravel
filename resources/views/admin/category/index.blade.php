@@ -60,7 +60,7 @@
                                                                 <td class="d-none d-xl-table-cell">{{$rs->parent_id}}</td>
                                                                 <td class="d-none d-xl-table-cell">{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}</td>
                                                                 <td class="d-none d-md-table-cell">{{$rs->keywords}}</td>
-                                                                <td class="d-none d-xl-table-cell">{{$rs->description}}</td>
+                                                                <td class="d-none d-xl-table-cell">{!! $rs->description !!}</td>
                                                                 <td class="d-none d-md-table-cell">{{$rs->status}}</td>
                                                                 <td><a href="{{route('admin.category.edit', ['id'=>$rs->id])}}" class="btn btn-sm text-none btn-warning" style="text-decoration: none">
                                                                     <i class="align-middle" data-feather="edit-3"></i>Edit

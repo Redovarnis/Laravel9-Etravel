@@ -6,7 +6,7 @@
                     <!-- Carousel Indicators -->
                     <ol class="carousel-indicators">
                         @foreach ($sliderdata as $rs)
-                            <li data-target="#carousel-example" data-slide-to="0" class="{{$rs['id']==1?'active':''}}"></li>
+                            <li data-target="#carousel-example" data-slide-to="{{$rs['id']-1}}" class="{{$rs['id']==1?'active':''}}"></li>
                         @endforeach
                     </ol>
                     <div class="clearfix"></div>

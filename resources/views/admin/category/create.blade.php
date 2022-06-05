@@ -51,10 +51,10 @@
                                                 </div>
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Description</strong></label>
-                                                    <textarea class="form-control" id="Description" name="Description"></textarea>
+                                                    <textarea class="form-control" id="description" name="description"></textarea>
                                                     <script>
                                                         ClassicEditor
-                                                                .create( document.querySelector( '#Description' ) )
+                                                                .create( document.querySelector( '#description' ) )
                                                                 .then( editor => {
                                                                         console.log( editor );
                                                                 } )

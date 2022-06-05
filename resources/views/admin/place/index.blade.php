@@ -71,7 +71,7 @@
                                                                 </td>
                                                                 <td class="d-none d-xl-table-cell">{{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs, $rs->title) }}</td>
                                                                 <td class="d-none d-md-table-cell">{{$rs->keywords}}</td>
-                                                                <td class="d-none d-xl-table-cell">{{$rs->description}}</td>
+                                                                <td class="d-none d-xl-table-cell">{!! $rs->description !!}</td>
                                                                 <td class="d-none d-xl-table-cell">{{$rs->country}}</td>
                                                                 <td class="d-none d-xl-table-cell">{{$rs->city}}</td>
                                                                 <td class="d-none d-xl-table-cell">{{$rs->location}}</td>
