@@ -1,7 +1,9 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Add Category')
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+@endsection
 @section('content')
 
             <!-- MAIN CONTENT -->
@@ -49,7 +51,17 @@
                                                 </div>
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Description</strong></label>
-                                                    <input type="text" class="form-control form-control-lg" name="description" placeholder="Description">
+                                                    <textarea class="form-control" id="Description" name="Description"></textarea>
+                                                    <script>
+                                                        ClassicEditor
+                                                                .create( document.querySelector( '#Description' ) )
+                                                                .then( editor => {
+                                                                        console.log( editor );
+                                                                } )
+                                                                .catch( error => {
+                                                                        console.error( error );
+                                                                } );
+                                                    </script>
                                                 </div>
                                                 <div class="mb-3 form-control">
                                                     <label class="" for="image"><strong>Image</strong></label>

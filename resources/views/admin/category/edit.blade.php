@@ -1,7 +1,9 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Edit Category: ' .$data->title)
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+@endsection
 @section('content')
 
             <!-- MAIN CONTENT -->
@@ -52,6 +54,22 @@
                                                 <div class="mb-3 form-label">
                                                     <label for="email"><strong>Description</strong></label>
                                                     <input type="text" class="form-control" name="description" value="{{$data->description}}">
+                                                </div>
+                                                <div class="mb-3 form-label">
+                                                    <label for="email"><strong>Description</strong></label>
+                                                    <textarea class="form-control" id="description" name="description">
+                                                        {{$data->description}}
+                                                    </textarea>
+                                                    <script>
+                                                        ClassicEditor
+                                                                .create( document.querySelector( '#description' ) )
+                                                                .then( editor => {
+                                                                        console.log( editor );
+                                                                } )
+                                                                .catch( error => {
+                                                                        console.error( error );
+                                                                } );
+                                                    </script>
                                                 </div>
                                                 <div class="mb-3 form-control">
                                                     <label class="" for="image"><strong>Image</strong></label>

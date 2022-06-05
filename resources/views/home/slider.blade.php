@@ -5,9 +5,9 @@
                 <div id="carousel-example" class="carousel slide" data-ride="carousel">
                     <!-- Carousel Indicators -->
                     <ol class="carousel-indicators">
-                        <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example" data-slide-to="1"></li>
-                        <li data-target="#carousel-example" data-slide-to="2"></li>
+                        @foreach ($sliderdata as $rs)
+                            <li data-target="#carousel-example" data-slide-to="0" class="{{$rs['id']==1?'active':''}}"></li>
+                        @endforeach
                     </ol>
                     <div class="clearfix"></div>
                     <!-- End Carousel Indicators -->
