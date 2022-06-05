@@ -57,10 +57,11 @@
         <div id="carousel-example-2" class="carousel slide alternative" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                @foreach ($placelist as $rs)
-                    <li data-target="#carousel-example-2" data-slide-to="{{$rs['id']-1}}" class="{{$rs['id']==1?'active':''}}"></li>
-                    @break($rs['id']==$total/4+1)
-                @endforeach
+                @while ($i < $imgcnt)
+                    <li data-target="#carousel-example-2" data-slide-to="{{ $i }}" class="{{ $i == 0 ? 'active' : '' }}"></li>
+                    @php $i++ @endphp
+                    @break($i == (int)ceil($imgcnt / $sliderchunk))
+                @endwhile
             </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
@@ -72,7 +73,9 @@
                     @endif
                     <div class="row">
                         @foreach ($rs as $singlers)
-                            <div class="col-md-3"><img src="{{Storage::url($singlers->image)}}" style="max-width:100%;"></div>
+                            <div class="col-md-{{(int)floor(12 / $sliderchunk)}}">
+                                <img src="{{Storage::url($singlers->image)}}" style="max-width:100%;">
+                            </div>
                         @endforeach
                     </div>
                 </div>

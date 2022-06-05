@@ -9,15 +9,20 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $total = 4;
-        $sliderdata = Place::limit($total)->get();
-        $placelist = Place::limit($total)->get();
-        $placelist2 = Place::where('category_id', 1)->get()->chunk(4);
+        $i = 0;
+        $imgcnt = Place::where('category_id', 1)->count();
+        $sliderchunk = 4;
+        $sliderdata = Place::limit($sliderchunk)->get();
+        $placelist = Place::limit($sliderchunk)->get();
+        // specify a category_id to chunk those places by their category id
+        $placelist2 = Place::where('category_id', 1)->get()->chunk($sliderchunk);
         return view('home.index', [
             'sliderdata'=>$sliderdata,
             'placelist' => $placelist,
             'placelist2' => $placelist2,
-            'total' => $total,
+            'imgcnt' => $imgcnt,
+            'sliderchunk' => $sliderchunk,
+            'i' => $i,
         ]);
     }
 

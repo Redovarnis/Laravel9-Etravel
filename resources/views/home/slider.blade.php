@@ -5,16 +5,19 @@
                 <div id="carousel-example" class="carousel slide" data-ride="carousel">
                     <!-- Carousel Indicators -->
                     <ol class="carousel-indicators">
-                        @foreach ($sliderdata as $rs)
-                            <li data-target="#carousel-example" data-slide-to="{{$rs['id']-1}}" class="{{$rs['id']==1?'active':''}}"></li>
-                        @endforeach
+                        @while ($i < $imgcnt)
+                            <li data-target="#carousel-example" data-slide-to="{{ $i }}" class="{{$i == 0 ? 'active':''}}"></li>
+                            @php $i++ @endphp
+                            @break($i == (int)floor($sliderchunk))
+                        @endwhile
+
                     </ol>
                     <div class="clearfix"></div>
                     <!-- End Carousel Indicators -->
                     <!-- Carousel Images -->
                     <div class="carousel-inner">
                         @foreach ($sliderdata as $rs)
-                            <div class="item {{$rs['id']==1?'active':''}}">
+                            <div class="item {{$rs['id']==1 ? 'active':''}}">
                                 <img src="{{Storage::url($rs->image)}}" style="width: 1080px; height: 540px">
                             </div>
                         @endforeach
