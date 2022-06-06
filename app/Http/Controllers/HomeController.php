@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Place;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,23 @@ class HomeController extends Controller
             'imgcnt' => $imgcnt,
             'sliderchunk' => $sliderchunk,
             'i' => $i,
+        ]);
+    }
+
+    public function place($id)
+    {
+        $data = Place::find($id);
+        $keywords = Place::all()->where('id', $id);
+        $posts = Place::limit(4)->get();
+        $images = DB::table('images')->where('place_id', $id)->get();
+        $place_id = Place::all()->where('id', $id);
+
+        return view('home.place', [
+            'data' => $data,
+            'posts' => $posts,
+            'keywords' => $keywords,
+            'images' => $images,
+            'place_id' => $place_id,
         ]);
     }
 

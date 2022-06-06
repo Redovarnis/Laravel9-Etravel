@@ -33,6 +33,8 @@ Route::get('/param/{id}/{number}', [HomeController::class, 'param'])->name('para
 // Route with post
 Route::post('/save', [HomeController::class, 'save'])->name('save');
 
+Route::get('/place/{id}', [HomeController::class, 'place'])->name('place');
+
 // Testing the custom header
 Route::get('/header', [HomeController::class, 'header'])->name('header');
 

@@ -58,7 +58,7 @@
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 @while ($i < $imgcnt)
-                    <li data-target="#carousel-example-2" data-slide-to="{{ $i }}" class="{{ $i == 0 ? 'active' : '' }}"></li>
+                    <li data-target="{#carousel-example-2}" data-slide-to="{{ $i }}" class="{{ $i == 0 ? 'active' : '' }}"></li>
                     @php $i++ @endphp
                     @break($i == (int)ceil($imgcnt / $sliderchunk))
                 @endwhile
@@ -74,7 +74,9 @@
                     <div class="row">
                         @foreach ($rs as $singlers)
                             <div class="col-md-{{(int)floor(12 / $sliderchunk)}}">
-                                <img src="{{Storage::url($singlers->image)}}" style="max-width:100%;">
+                                <a href="{{route('place', ['id'=>$singlers->id])}}">
+                                    <img src="{{Storage::url($singlers->image)}}" style="max-width:100%;">
+                                </a>
                             </div>
                         @endforeach
                     </div>

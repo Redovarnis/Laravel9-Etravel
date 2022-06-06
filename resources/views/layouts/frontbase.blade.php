@@ -40,7 +40,6 @@
 <!-- === BEGIN CONTENT === -->
 <div id="content">
 @section('slider')
-    @include('home.slider')
 @show
 
 @yield('content')
