@@ -32,78 +32,26 @@
     <div id="hornav" class="container no-padding">
         <div class="row">
             <div class="col-md-12 no-padding">
+                @php
+                    $mainCategories = \App\Http\Controllers\HomeController::maincategorylist();
+                @endphp
                 <div class="text-center visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <a href="index.html" class="fa-home">Home</a>
+                            <a href="{{route('home')}}" class="fa-home">Home</a>
                         </li>
                         <li>
-                            <span class="fa-gears">Features</span>
-                            <ul>
-                                <li class="parent">
-                                    <span>Typography</span>
-                                    <ul>
-                                        <li>
-                                            <a href="features-typo-basic.html">Basic Typography</a>
-                                        </li>
-                                        <li>
-                                            <a href="features-typo-blockquotes.html">Blockquotes</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="parent">
-                                    <span>Components</span>
-                                    <ul>
-                                        <li>
-                                            <a href="features-labels.html">Labels</a>
-                                        </li>
-                                        <li>
-                                            <a href="features-progress-bars.html">Progress Bars</a>
-                                        </li>
-                                        <li>
-                                            <a href="features-panels.html">Panels</a>
-                                        </li>
-                                        <li>
-                                            <a href="features-pagination.html">Pagination</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="parent">
-                                    <span>Icons</span>
-                                    <ul>
-                                        <li>
-                                            <a href="features-icons.html">Icons General</a>
-                                        </li>
-                                        <li>
-                                            <a href="features-icons-social.html">Social Icons</a>
-                                        </li>
-                                        <li>
-                                            <a href="features-icons-font-awesome.html">Font Awesome</a>
-                                        </li>
-                                        <li>
-                                            <a href="features-icons-glyphicons.html">Glyphicons</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="features-testimonials.html">Testimonials</a>
-                                </li>
-                                <li>
-                                    <a href="features-accordions-tabs.html">Accordions & Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="features-buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="features-carousels.html">Carousels</a>
-                                </li>
-                                <li>
-                                    <a href="features-grid.html">Grid System</a>
-                                </li>
-                                <li>
-                                    <a href="features-animate-on-scroll.html">Animate On Scroll</a>
-                                </li>
-                            </ul>
+                            <span class="fa-gears">Categories</span>
+                                <ul>
+                                    @foreach ($mainCategories as $rs)
+                                    <li class="parent">
+                                        <span>{{ $rs->title }}</span>
+                                        @if (count($rs->children))
+                                            @include('home.categorytree', ['children' => $rs->children])
+                                        @endif
+                                    </li>
+                                    @endforeach
+                                </ul>
                         </li>
                         <li>
                             <span class="fa-copy">Pages</span>

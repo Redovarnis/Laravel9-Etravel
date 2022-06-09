@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Place;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public static function maincategorylist()
+    {
+        return Category::where('parent_id', '=', 0)->with('children')->get();
+    }
+
+
     public function index()
     {
         $i = 0;
@@ -33,14 +40,29 @@ class HomeController extends Controller
         $keywords = Place::all()->where('id', $id);
         $posts = Place::limit(4)->get();
         $images = DB::table('images')->where('place_id', $id)->get();
-        $place_id = Place::all()->where('id', $id);
 
         return view('home.place', [
             'data' => $data,
             'posts' => $posts,
             'keywords' => $keywords,
             'images' => $images,
-            'place_id' => $place_id,
+        ]);
+    }
+
+    public function categoryplaces($id)
+    {
+        echo "Category Products";
+        exit(1);
+        $data = Place::find($id);
+        $keywords = Place::all()->where('id', $id);
+        $posts = Place::limit(4)->get();
+        $images = DB::table('images')->where('place_id', $id)->get();
+
+        return view('home.place', [
+            'data' => $data,
+            'posts' => $posts,
+            'keywords' => $keywords,
+            'images' => $images,
         ]);
     }
 

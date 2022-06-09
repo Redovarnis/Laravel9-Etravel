@@ -34,6 +34,7 @@ Route::get('/param/{id}/{number}', [HomeController::class, 'param'])->name('para
 Route::post('/save', [HomeController::class, 'save'])->name('save');
 
 Route::get('/place/{id}', [HomeController::class, 'place'])->name('place');
+Route::get('/categoryplaces/{id}/{slug}', [HomeController::class, 'categoryplaces'])->name('categoryplaces');
 
 // Testing the custom header
 Route::get('/header', [HomeController::class, 'header'])->name('header');
