@@ -38,31 +38,29 @@ class HomeController extends Controller
     {
         $data = Place::find($id);
         $keywords = Place::all()->where('id', $id);
-        $posts = Place::limit(4)->get();
+        $posts = Place::limit(5)->get();
         $images = DB::table('images')->where('place_id', $id)->get();
 
         return view('home.place', [
             'data' => $data,
-            'posts' => $posts,
             'keywords' => $keywords,
+            'posts' => $posts,
             'images' => $images,
         ]);
     }
 
     public function categoryplaces($id)
     {
-        echo "Category Products";
-        exit(1);
-        $data = Place::find($id);
+        $category = Category::find($id);
         $keywords = Place::all()->where('id', $id);
         $posts = Place::limit(4)->get();
-        $images = DB::table('images')->where('place_id', $id)->get();
+        $places = DB::table('places')->where('category_id', $id)->get();
 
-        return view('home.place', [
-            'data' => $data,
-            'posts' => $posts,
+        return view('home.categoryplaces', [
+            'category' => $category,
             'keywords' => $keywords,
-            'images' => $images,
+            'posts' => $posts,
+            'places' => $places,
         ]);
     }
 

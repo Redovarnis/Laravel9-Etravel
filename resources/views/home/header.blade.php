@@ -1,16 +1,16 @@
 <div id="body-bg">
     <ul class="social-icons pull-right hidden-xs">
-        <li class="social-rss">
-            <a href="#" target="_blank" title="RSS"></a>
+        <li class="social-youtube">
+            <a href="https://www.youtube.com/" target="_blank" title="Youtube"></a>
         </li>
         <li class="social-twitter">
-            <a href="#" target="_blank" title="Twitter"></a>
+            <a href="https://www.twitter.com/" target="_blank" title="Twitter"></a>
         </li>
         <li class="social-facebook">
-            <a href="#" target="_blank" title="Facebook"></a>
+            <a href="https://www.facebook.com/" target="_blank" title="Facebook"></a>
         </li>
         <li class="social-googleplus">
-            <a href="#" target="_blank" title="GooglePlus"></a>
+            <a href="https://www.google.com/" target="_blank" title="GooglePlus"></a>
         </li>
     </ul>
     <div id="pre-header" class="container" style="height:340px">
@@ -20,8 +20,8 @@
             <div class="row">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html" title="">
-                        <img src="assets/img/logo.png" alt="Logo" />
+                    <a href="{{route('home')}}" title="">
+                        <img src="{{asset('assets')}}/img/logo.png" alt="Logo" />
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -44,7 +44,11 @@
                             <span class="fa-gears">Categories</span>
                                 <ul>
                                     @foreach ($mainCategories as $rs)
-                                    <li class="parent">
+                                        @if (count($rs->children))
+                                            <li class="parent">
+                                        @else
+                                            <li>
+                                        @endif
                                         <span>{{ $rs->title }}</span>
                                         @if (count($rs->children))
                                             @include('home.categorytree', ['children' => $rs->children])

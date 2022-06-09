@@ -97,21 +97,13 @@
                             </div>
                             <!-- === END SLIDER === -->
                             <div id="pre-header" class="container" style="height: 40px">
-                                <!-- Spacing above slider -->
+                                <!-- Spacing below slider -->
                             </div>
-
                                 <div class="col-md-5">
-                                    <img class="margin-bottom-20" src="{{Storage::url($data->image)}}" alt="image1">
+                                    <img class="margin-bottom-20" src="{{Storage::url($data->image)}}" alt="image1" style="width:300px; height:165.38px;">
                                 </div>
                                 <div class="col-md-7">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">Description</h3>
-                                        </div>
-                                        <div class="panel-body">
-                                            <p>{{$data->description}}</p>
-                                        </div>
-                                    </div>
+                                    <p>{{$data->description}}</p>
 
                                 </div>
                                 <div class="col-md-12">
@@ -275,11 +267,14 @@
                         <ul class="posts-list margin-top-10">
                             <li>
                                 @foreach ($posts as $rs)
+                                    @if ($rs->id == $data->id)
+                                        @continue
+                                    @endif
                                     <div class="recent-post">
-                                        <a href="">
+                                        <a href="{{route('place', ['id'=>$rs->id])}}">
                                             <img class="pull-left" src="{{Storage::url($rs->image)}}" alt="thumb1" style="width:54px; height:54px;">
                                         </a>
-                                        <a href="#" class="posts-list-title">{{$rs->title}}</a>
+                                        <a href="{{route('place', ['id'=>$rs->id])}}" class="posts-list-title">{{$rs->title}}</a>
                                         <br>
                                         <span class="recent-post-date">
                                             {{$rs->created_at}}
@@ -291,7 +286,7 @@
                         </ul>
                     </div>
                     <!-- End Recent Posts -->
-                    <!-- End Side Column -->
+                <!-- End Side Column -->
                 </div>
             </div>
         </div>
