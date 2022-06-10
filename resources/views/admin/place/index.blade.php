@@ -57,7 +57,7 @@
                                                                 <td> {{$rs->id}} </td>
                                                                 <td class="d-none d-md-table-cell">
                                                                     @if ($rs->image)
-                                                                    <img src="{{Storage::url($rs->image)}}" alt="{{$rs->title}}" style="height: 40px" class="img-fluid">
+                                                                        <img src="{{Storage::url($rs->image)}}" alt="{{$rs->title}}" style="height: 40px" class="img-fluid">
                                                                     @endif
                                                                 </td>
                                                                 <td>

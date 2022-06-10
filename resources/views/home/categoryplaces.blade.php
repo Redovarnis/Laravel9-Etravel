@@ -6,8 +6,7 @@
 
     <div id="content">
         <div class="container background-white">
-            <!-- spacing --> <br><br>
-            <ul class="list-inline">
+            <ul class="list-inline" style="margin-top: 50px">
                 <li><a href="{{ route('home') }}">Home</a></li>
                 <li>></li>
                 <li><a href="">{{$category->title}}</a></li>

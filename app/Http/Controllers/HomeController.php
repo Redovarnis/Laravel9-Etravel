@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Place;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,8 +23,8 @@ class HomeController extends Controller
         $sliderchunk = 4;
         $sliderdata = Place::limit($sliderchunk)->get();
         $placelist = Place::limit($sliderchunk)->get();
-        // specify a category_id to chunk those places by their category id
         $placelist2 = Place::where('category_id', 1)->get()->chunk($sliderchunk);
+        $setting = Setting::first();
         return view('home.index', [
             'sliderdata'=>$sliderdata,
             'placelist' => $placelist,
@@ -31,6 +32,7 @@ class HomeController extends Controller
             'imgcnt' => $imgcnt,
             'sliderchunk' => $sliderchunk,
             'i' => $i,
+            'setting' => $setting
         ]);
     }
 
