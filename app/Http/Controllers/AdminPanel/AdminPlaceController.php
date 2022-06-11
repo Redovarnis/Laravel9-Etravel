@@ -18,7 +18,6 @@ class AdminPlaceController extends Controller
      */
     public function index()
     {
-        //
         $data = Place::all();
         return view('admin.place.index', [
             'data' => $data
@@ -32,7 +31,6 @@ class AdminPlaceController extends Controller
      */
     public function create()
     {
-        //
         $data = Category::all();
         return view('admin.place.create', [
             'data' => $data
@@ -47,7 +45,6 @@ class AdminPlaceController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $data = new Place();
         $data->category_id = $request->category_id;
         $data->user_id = 0; //$request->user_id;
@@ -74,7 +71,6 @@ class AdminPlaceController extends Controller
      */
    public function show(Place $place, $id)
     {
-        //
         $data = Place::find($id);
         return view('admin.place.show', [
             'data' => $data
@@ -93,7 +89,6 @@ class AdminPlaceController extends Controller
      */
     public function edit(Place $place, Category $category, $id)
     {
-        //
         $data = Place::find($id);
         $datalist = Category::all();
         return view('admin.place.edit', [
@@ -111,7 +106,6 @@ class AdminPlaceController extends Controller
      */
     public function update(Request $request, Place $place, $id)
     {
-        //
         $data = Place::find($request->id);
         $data->category_id = $request->category_id;
         $data->user_id = 0; //$request->user_id;
@@ -141,7 +135,6 @@ class AdminPlaceController extends Controller
      */
     public function destroy(Place $place, $id)
     {
-        //
         $data = Place::find($id);
         if ($data->image && Storage::disk('public')->exists($data->image)) {
             Storage::delete($data->image);

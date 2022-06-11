@@ -52,6 +52,7 @@
                                 @endforeach
                             </ul>
                         </li>
+                        <li><a href="{{route('faq')}}" class="fa-comment noselect">FAQ</a></li>
                         <li><a href="{{route('about')}}" class="fa-comment noselect">About</a></li>
                         <li><a href="{{route('contact')}}" class="fa-comment noselect">Contact</a></li>
                         <li><a href="{{route('references')}}" class="fa-comment noselect">References</a></li>

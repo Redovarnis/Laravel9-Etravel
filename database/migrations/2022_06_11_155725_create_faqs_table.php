@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('faqs', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
+            $table->string('question', 100);
+            $table->text('answer', 50);
+            $table->string('status', 50)->nullable()->default('False');
             $table->timestamps();
         });
     }

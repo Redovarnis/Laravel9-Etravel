@@ -22,17 +22,16 @@
 </head>
 
 <body>
+@section('sidebar')
+    @include("admin.sidebar")
+@show
 
-    @section('sidebar')
-        @include("admin.sidebar")
-    @show
+        @include("admin.header")
 
-    @include("admin.header")
+@yield('content')
 
-    @yield('content')
-
-    @include("admin.footer")
-    @yield('foot')
+@include("admin.footer")
+@yield('foot')
 
 </body>
 </html>

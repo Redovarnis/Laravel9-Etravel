@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Place;
 use App\Models\Setting;
 use App\Models\Message;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -65,6 +66,18 @@ class HomeController extends Controller
         $setting = Setting::first();
         $spacing = 1;
         return view('home.contact', [
+            'setting' => $setting,
+            'spacing' => $spacing
+        ]);
+    }
+
+    public function faq()
+    {
+        $setting = Setting::first();
+        $datalist = Faq::all();
+        $spacing = 1;
+        return view('home.faq', [
+            'datalist' => $datalist,
             'setting' => $setting,
             'spacing' => $spacing
         ]);
