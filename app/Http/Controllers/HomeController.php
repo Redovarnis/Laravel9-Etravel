@@ -19,6 +19,7 @@ class HomeController extends Controller
     public function index()
     {
         $i = 0;
+        $spacing = 0;
         $imgcnt = Place::where('category_id', 1)->count();
         $sliderchunk = 4;
         $sliderdata = Place::limit($sliderchunk)->get();
@@ -32,7 +33,38 @@ class HomeController extends Controller
             'imgcnt' => $imgcnt,
             'sliderchunk' => $sliderchunk,
             'i' => $i,
-            'setting' => $setting
+            'setting' => $setting,
+            'spacing' => $spacing
+        ]);
+    }
+
+    public function about()
+    {
+        $setting = Setting::first();
+        $spacing = 1;
+        return view('home.about', [
+            'setting' => $setting,
+            'spacing' => $spacing
+        ]);
+    }
+
+    public function references()
+    {
+        $setting = Setting::first();
+        $spacing = 1;
+        return view('home.references', [
+            'setting' => $setting,
+            'spacing' => $spacing
+        ]);
+    }
+
+    public function contact()
+    {
+        $setting = Setting::first();
+        $spacing = 1;
+        return view('home.contact', [
+            'setting' => $setting,
+            'spacing' => $spacing
         ]);
     }
 
@@ -42,12 +74,14 @@ class HomeController extends Controller
         $keywords = Place::all()->where('id', $id);
         $posts = Place::limit(5)->get();
         $images = DB::table('images')->where('place_id', $id)->get();
+        $spacing = 1;
 
         return view('home.place', [
             'data' => $data,
             'keywords' => $keywords,
             'posts' => $posts,
             'images' => $images,
+            'spacing' => $spacing
         ]);
     }
 
@@ -57,12 +91,14 @@ class HomeController extends Controller
         $keywords = Place::all()->where('id', $id);
         $posts = Place::limit(4)->get();
         $places = DB::table('places')->where('category_id', $id)->get();
+        $spacing = 1;
 
         return view('home.categoryplaces', [
             'category' => $category,
             'keywords' => $keywords,
             'posts' => $posts,
             'places' => $places,
+            'spacing' => $spacing
         ]);
     }
 

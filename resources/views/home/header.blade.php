@@ -13,7 +13,7 @@
             <a href="https://www.google.com/" target="_blank" title="GooglePlus"></a>
         </li>
     </ul>
-    <div id="pre-header" class="container" style="height:340px">
+    <div id="pre-header" class="container" style="@if ($spacing) height:40px; @else height:340px; @endif">
     </div>
     <div id="header">
         <div class="container">
@@ -42,94 +42,26 @@
                         </li>
                         <li>
                             <span class="fa-gears">Categories</span>
-                                <ul>
-                                    @foreach ($mainCategories as $rs)
-                                        @if (count($rs->children))
-                                            <li class="parent">
-                                        @else
-                                            <li>
-                                        @endif
-                                        <span>{{ $rs->title }}</span>
+                            <ul>
+                                @foreach ($mainCategories as $rs)
+                                    <li class="@if (count($rs->children)) parent @endif"><a class="noselect">{{ $rs->title }}</a>
                                         @if (count($rs->children))
                                             @include('home.categorytree', ['children' => $rs->children])
                                         @endif
                                     </li>
-                                    @endforeach
-                                </ul>
-                        </li>
-                        <li>
-                            <span class="fa-copy">Pages</span>
-                            <ul>
-                                <li>
-                                    <a href="pages-about-us.html">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="pages-services.html">Services</a>
-                                </li>
-                                <li>
-                                    <a href="pages-faq.html">F.A.Q.</a>
-                                </li>
-                                <li>
-                                    <a href="pages-about-me.html">About Me</a>
-                                </li>
-                                <li>
-                                    <a href="pages-full-width.html">Full Width</a>
-                                </li>
-                                <li>
-                                    <a href="pages-left-sidebar.html">Left Sidebar</a>
-                                </li>
-                                <li>
-                                    <a href="pages-right-sidebar.html">Right Sidebar</a>
-                                </li>
-                                <li>
-                                    <a href="pages-login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="pages-sign-up.html">Sign-Up</a>
-                                </li>
-                                <li>
-                                    <a href="pages-404.html">404 Error Page</a>
-                                </li>
+                                @endforeach
                             </ul>
                         </li>
-                        <li>
-                            <span class="fa-th">Portfolio</span>
-                            <ul>
-                                <li>
-                                    <a href="portfolio-2-column.html">2 Column</a>
-                                </li>
-                                <li>
-                                    <a href="portfolio-3-column.html">3 Column</a>
-                                </li>
-                                <li>
-                                    <a href="portfolio-4-column.html">4 Column</a>
-                                </li>
-                                <li>
-                                    <a href="portfolio-6-column.html">6 Column</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="fa-font">Blog</span>
-                            <ul>
-                                <li>
-                                    <a href="blog-list.html">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="blog-single.html">Blog Single Item</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="contact.html" class="fa-comment">Contact</a>
-                        </li>
+                        <li><a href="{{route('about')}}" class="fa-comment">About</a></li>
+                        <li><a href="{{route('contact')}}" class="fa-comment">Contact</a></li>
+                        <li><a href="{{route('references')}}" class="fa-comment">References</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Top Menu -->
-    <div id="post_header" class="container" style="height:340px">
+    <div id="post_header" class="container" style="@if ($spacing) height:40px; @else height:340px; @endif">
     </div>
     <div id="content-top-border" class="container">
     </div>
