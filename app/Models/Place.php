@@ -15,7 +15,7 @@ class Place extends Model
     }
 
     // one To Many
-    public function comments()
+    public function comment()
     {
         return $this->hasMany(Comment::class);
     }

@@ -22,7 +22,15 @@
                             <!-- Author Name -->
                             <div class="blog-post-details-item blog-post-details-item-left user-icon">
                                 <i class="fa fa-user color-gray-light"></i>
-                                <a href="#">{{$data->user_id}}-User_Name_Sample</a>
+                                <a href="#">
+                                    @foreach ($reviews as $rs)
+                                        @if ($loop->first)
+                                            {{$rs->user->name}}
+                                        @else
+                                            @break
+                                        @endif
+                                    @endforeach
+                                </a>
                             </div>
                             <!-- End Author Name -->
                             <!-- Category -->
@@ -37,10 +45,27 @@
                             <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
                                 <a href="">
                                     <i class="fa fa-comments color-gray-light"></i>
-                                    3 Comments
+                                    {{$data->comment->count('id')}} Comments
                                 </a>
                             </div>
                             <!-- End # of Comments -->
+                            <!-- Average Rating -->
+                            <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
+                                <a href="">
+                                    <i class="fa fa-comments color-gray-light"></i>
+                                    @php
+                                        $average = $data->comment->avg('rate');
+                                    @endphp
+                                    @for ($i = 0; $i < 5; $i++)
+                                        @if ($i < (int) $average)
+                                            <i class="fa fa-star color-yellow"></i>
+                                        @else
+                                            <i class="fa fa-star color-gray-light"></i>
+                                        @endif
+                                    @endfor
+                                </a>
+                            </div>
+                            <!-- End Average Rating -->
                             <!-- Date -->
                             <div class="blog-post-details-item blog-post-details-item-left">
                                 <i class="fa fa-calendar color-gray-light"></i>

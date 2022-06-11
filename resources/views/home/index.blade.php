@@ -79,6 +79,25 @@
                             <div class="col-md-{{(int)floor(12 / $sliderchunk)}}">
                                 <a href="{{route('place', ['id'=>$singlers->id])}}">
                                     <img src="{{Storage::url($singlers->image)}}" style="max-width:100%;">
+                                    <div style="text-align:center;">
+                                        <a href="{{route('place', ['id'=>$singlers->id])}}">
+                                            {{$singlers->title}}
+                                        </a>
+                                    </div>
+
+                                    <div class="noselect" style="text-align: center;">
+                                        @php
+                                            $average = $singlers->comment->avg('rate');
+                                        @endphp
+                                        @for ($i = 0; $i < 5; $i++)
+                                            @if ($i < (int) $average)
+                                                <i class="fa fa-star color-yellow"></i>
+                                            @else
+                                                <i class="fa fa-star color-gray-light"></i>
+                                            @endif
+                                        @endfor
+                                         ({{$singlers->comment->count('id')}})
+                                    </div>
                                 </a>
                             </div>
                         @endforeach
