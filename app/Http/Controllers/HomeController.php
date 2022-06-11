@@ -7,8 +7,10 @@ use App\Models\Place;
 use App\Models\Setting;
 use App\Models\Message;
 use App\Models\Faq;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class HomeController extends Controller
@@ -96,7 +98,22 @@ class HomeController extends Controller
         $data->ip = $request->ip();
         $data->save();
 
-        return redirect()->route('contact')->with('info', 'Your message has been sent successfully!');
+        return redirect()->route('contact')->with('success', 'Your message has been sent successfully!');
+    }
+
+    public function storecomment(Request $request)
+    {
+        // dd($request); // Check your values
+        $data = new Comment();
+        $data->user_id = Auth::id(); // Logged in user id
+        $data->place_id = $request->input('place_id');
+        $data->subject = $request->input('subject');
+        $data->review = $request->input('review');
+        $data->rate = $request->input('rate');
+        $data->ip = $request->ip();
+        $data->save();
+
+        return redirect()->route('place',['id'=>$request->input('place_id')])->with('success', 'Your comment has been sent successfully!');
     }
 
     public function place($id)
@@ -106,13 +123,15 @@ class HomeController extends Controller
         $posts = Place::limit(5)->get();
         $images = DB::table('images')->where('place_id', $id)->get();
         $spacing = 1;
+        $reviews = Comment::where('place_id', $id)->where('status', 'True')->get();
 
         return view('home.place', [
             'data' => $data,
             'keywords' => $keywords,
             'posts' => $posts,
             'images' => $images,
-            'spacing' => $spacing
+            'spacing' => $spacing,
+            'reviews' => $reviews
         ]);
     }
 

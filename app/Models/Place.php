@@ -13,4 +13,10 @@ class Place extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    // one To Many
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

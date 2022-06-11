@@ -72,9 +72,9 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="/admin/social">
+                        <a class="sidebar-link" href="{{route('admin.comment.index')}}">
                             <i class="align-middle text-info" data-feather="message-circle"></i>
-                            <span class="align-middle">Social</span>
+                            <span class="align-middle">Comments</span>
                         </a>
                     </li>
 

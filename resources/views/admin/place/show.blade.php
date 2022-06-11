@@ -78,7 +78,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <th>Detail:
-                                                                    <li class="list-group-item"> {{$data->detail}}</li>
+                                                                    <li class="list-group-item"> {!! $data->detail !!}</li>
                                                                 </th>
                                                             </tr>
                                                             <tr>

@@ -18,6 +18,8 @@
     <link href="@yield("icon")" type="image/x-icon" rel="icon">
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap Star Rating CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{asset('assets')}}/css/animate.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('assets')}}/css/font-awesome.css" rel="stylesheet">
@@ -28,6 +30,7 @@
     <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=PT+Sans" type="text/css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     @yield("head")
 </head>
 

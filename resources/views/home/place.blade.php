@@ -51,6 +51,7 @@
                         <div class="blog-item">
                             <div class="clearfix"></div>
                             <div class="blog-post-body row margin-top-15">
+                                @include('home.messages')
                                 <!-- === BEGIN SLIDER === -->
                                 <div class="container no-padding">
                                     <div class="row">
@@ -146,55 +147,33 @@
                                         <h3>Comments</h3>
                                     </div>
                                     <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-md-2 profile-thumb">
-                                                    <a href="#">
-                                                        <img class="media-object" src="assets/img/profiles/99.jpg" alt="">
-                                                    </a>
+                                        @foreach ($reviews as $rs)
+                                            <li class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-md-2 profile-thumb">
+                                                        <a href="#">
+                                                            <img class="media-object" src="{{asset('assets')}}/img/profiles/avatar.png" alt="{{$rs->user->name}}">
+                                                            <div style="text-align: center;" ><label>{{$rs->user->name}}</label></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <div class="pull-left"><h4>{{$rs->subject}}</h4></div>
+                                                        <div class="pull-right"><span class="date"><i class="fa fa-clock-o color-gray-light"></i> {{$rs->created_at}}</span></div>
+                                                        <div class="clearfix"></div>
+                                                        <br>
+                                                        <p>{!!$rs->review!!}</p>
+                                                        <div class="clearfix"></div>
+                                                        <div class="rating pull-right">
+                                                            <i class="fa fa-star @if ($rs->rate<5) color-gray-light @endif"></i>
+                                                            <i class="fa fa-star @if ($rs->rate<4) color-gray-light @endif"></i>
+                                                            <i class="fa fa-star @if ($rs->rate<3) color-gray-light @endif"></i>
+                                                            <i class="fa fa-star @if ($rs->rate<2) color-gray-light @endif"></i>
+                                                            <i class="fa fa-star @if ($rs->rate<1) color-gray-light @endif"></i>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-10">
-                                                    <h4>Great Article</h4>
-                                                    <p>Donec id erum quidem rerumd facilis est et expedita distinctio lorem ipsum dolorlit non mi portas sats eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                                                        fermentum massa justo sit amet risus. Etiam porta sem malesuada magna..</p>
-                                                    <span class="date">
-                                                        <i class="fa fa-clock-o color-gray-light"></i>5 hours ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-md-2 profile-thumb">
-                                                    <a href="#">
-                                                        <img class="media-object" src="assets/img/profiles/53.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <h4>A quick question</h4>
-                                                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                                    <p>Donec id erum quidem rerumd facilis est et expedita distinctio lorem ipsum dolorlit non mi portas sats eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                                                        fermentum massa justo sit amet risus. Etiam porta sem malesuada magna.</p>
-                                                    <span class="date">
-                                                        <i class="fa fa-clock-o color-gray-light"></i>12 May 2013</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-md-2 profile-thumb">
-                                                    <a href="#">
-                                                        <img class="media-object" src="assets/img/profiles/37.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <h4>Thank you!</h4>
-                                                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                                    <span class="date">
-                                                        <i class="fa fa-clock-o color-gray-light"></i>10 May 2013</span>
-                                                </div>
-                                            </div>
-                                        </li>
+                                            </li>
+                                        @endforeach
                                         <!-- Comment Form -->
                                         <li class="list-group-item">
                                             <div class="blog-comment-form">
@@ -207,30 +186,40 @@
                                                 </div>
                                                 <div class="row margin-top-20">
                                                     <div class="col-md-12">
-                                                        <form>
-                                                            <label>Name</label>
+                                                        <form action="{{route('storecomment')}}" method="post">
+                                                            @csrf
+                                                            <input class="form-control" type="hidden" name="place_id" value="{{$data->id}}">
+                                                            <label>Subject</label>
                                                             <div class="row margin-bottom-20">
                                                                 <div class="col-md-7 col-md-offset-0">
-                                                                    <input class="form-control" type="text">
+                                                                    <input class="form-control" type="text" name="subject" placeholder="Subject">
                                                                 </div>
                                                             </div>
-                                                            <label>Email
-                                                                <span>*</span>
-                                                            </label>
-                                                            <div class="row margin-bottom-20">
-                                                                <div class="col-md-7 col-md-offset-0">
-                                                                    <input class="form-control" type="text">
-                                                                </div>
-                                                            </div>
-                                                            <label>Message</label>
+                                                            <label>Review</label>
                                                             <div class="row margin-bottom-20">
                                                                 <div class="col-md-11 col-md-offset-0">
-                                                                    <textarea class="form-control" rows="8"></textarea>
+                                                                    <textarea class="form-control" name="review" rows="8" placeholder="Your review"></textarea>
                                                                 </div>
                                                             </div>
-                                                            <p>
-                                                                <button class="btn btn-primary" type="submit">Send Message</button>
-                                                            </p>
+                                                            <div class="row margin-bottom-20">
+                                                                <div class="col-md-3 col-md-offset-0">
+                                                                    <label>Your Rating: </label>
+                                                                </div>
+                                                                <div class="col-md-1 col-md-offset-0">
+                                                                    <div class="rating">
+                                                                        <input type="radio" name="rate" value="5" id="5"><label for="5">☆</label>
+                                                                        <input type="radio" name="rate" value="4" id="4"><label for="4">☆</label>
+                                                                        <input type="radio" name="rate" value="3" id="3"><label for="3">☆</label>
+                                                                        <input type="radio" name="rate" value="2" id="2"><label for="2">☆</label>
+                                                                        <input type="radio" name="rate" value="1" id="1"><label for="1">☆</label>
+                                                                      </div>
+                                                                </div>
+                                                            </div>
+                                                            @auth
+                                                                <p><button class="btn btn-primary" type="submit">Send Message</button></p>
+                                                            @else
+                                                                <p><a href="/login" class="btn btn-primary btn-red"> For Submit Your Review Please Login </a></p>
+                                                            @endauth
                                                         </form>
                                                     </div>
                                                 </div>
