@@ -46,21 +46,21 @@
 
                     <li class="sidebar-header"></li>
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="/admin/category">
+						<a class="sidebar-link" href="{{route('admin.category.index')}}">
                             <i class="align-middle text-warning" data-feather="list"></i>
                             <span class="align-middle">Categories</span>
                         </a>
 					</li>
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="/admin/place">
+						<a class="sidebar-link" href="{{route('admin.place.index')}}">
                             <i class="align-middle text-info" data-feather="send"></i>
                             <span class="align-middle">Places</span>
                         </a>
 					</li>
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="/admin/comment">
+						<a class="sidebar-link" href="{{route('admin.message.index')}}">
                             <i class="align-middle text-info" data-feather="message-square"></i>
-                            <span class="align-middle">Comments</span>
+                            <span class="align-middle">Messages</span>
                         </a>
 					</li>
                     <li class="sidebar-item">

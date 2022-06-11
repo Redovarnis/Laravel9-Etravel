@@ -28,11 +28,19 @@
                         sit amet, consectetur adipiscing elit landitiis.</p>
                     <br>
                     <!-- Contact Form -->
-                    <form >
+                    @include('home.messages')
+                    <form action="{{route("storemessage")}}" method="post">
+                        @csrf
                         <label>Name</label>
                         <div class="row margin-bottom-20">
                             <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" name="name" placeholder="Name & Surname">
+                            </div>
+                        </div>
+                        <label>Phone</label>
+                        <div class="row margin-bottom-20">
+                            <div class="col-md-6 col-md-offset-0">
+                                <input class="form-control" type="tel" name="phone" placeholder="Phone Number">
                             </div>
                         </div>
                         <label>Email
@@ -40,18 +48,22 @@
                         </label>
                         <div class="row margin-bottom-20">
                             <div class="col-md-6 col-md-offset-0">
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="email" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <label>Subject</label>
+                        <div class="row margin-bottom-20">
+                            <div class="col-md-6 col-md-offset-0">
+                                <input class="form-control" type="text" name="subject" placeholder="Subject">
                             </div>
                         </div>
                         <label>Message</label>
                         <div class="row margin-bottom-20">
                             <div class="col-md-8 col-md-offset-0">
-                                <textarea rows="8" class="form-control"></textarea>
+                                <textarea rows="8" class="form-control" type="text" name="message" placeholder="Message"></textarea>
                             </div>
                         </div>
-                        <p>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </p>
+                        <p><button type="submit" class="btn btn-primary">Send Message</button></p>
                     </form>
                     <!-- End Contact Form -->
                     <!-- End Main Content -->

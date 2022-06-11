@@ -38,10 +38,10 @@
                 <div class="text-center visible-lg">
                     <ul id="hornavmenu" class="nav navbar-nav">
                         <li>
-                            <a href="{{route('home')}}" class="fa-home">Home</a>
+                            <a href="{{route('home')}}" class="fa-home noselect">Home</a>
                         </li>
                         <li>
-                            <span class="fa-gears">Categories</span>
+                            <span class="fa-gears noselect">Categories</span>
                             <ul>
                                 @foreach ($mainCategories as $rs)
                                     <li class="@if (count($rs->children)) parent @endif"><a class="noselect">{{ $rs->title }}</a>
@@ -52,9 +52,9 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{route('about')}}" class="fa-comment">About</a></li>
-                        <li><a href="{{route('contact')}}" class="fa-comment">Contact</a></li>
-                        <li><a href="{{route('references')}}" class="fa-comment">References</a></li>
+                        <li><a href="{{route('about')}}" class="fa-comment noselect">About</a></li>
+                        <li><a href="{{route('contact')}}" class="fa-comment noselect">Contact</a></li>
+                        <li><a href="{{route('references')}}" class="fa-comment noselect">References</a></li>
                     </ul>
                 </div>
             </div>

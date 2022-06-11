@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Place;
 use App\Models\Setting;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 
 class HomeController extends Controller
 {
@@ -66,6 +68,22 @@ class HomeController extends Controller
             'setting' => $setting,
             'spacing' => $spacing
         ]);
+    }
+
+    public function storemessage(Request $request)
+    {
+        //  dd($request);
+        $data = new Message();
+        $data->name = $request->input('name');
+        $data->phone = $request->input('phone');
+        $data->email = $request->input('email');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->note = $request->input('note');
+        $data->ip = $request->ip();
+        $data->save();
+
+        return redirect()->route('contact')->with('info', 'Your message has been sent successfully!');
     }
 
     public function place($id)
