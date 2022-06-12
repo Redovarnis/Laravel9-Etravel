@@ -67,7 +67,7 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="/admin/user">
+                        <a class="sidebar-link" href="{{route('admin.user.index')}}">
                             <i class="align-middle text-success" data-feather="user"></i>
                             <span class="align-middle">Users</span>
                         </a>
