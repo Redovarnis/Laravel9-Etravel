@@ -2,6 +2,7 @@
         <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" href="{{route('admin.index')}}">
+                    <img src="{{asset('assets')}}/admin/img/icons/icon-48x48.png">
                     <span class="align-middle">E-Travel</span>
                 </a>
                 <ul class="sidebar-nav">

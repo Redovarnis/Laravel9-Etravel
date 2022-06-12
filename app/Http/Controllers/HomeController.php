@@ -177,8 +177,35 @@ class HomeController extends Controller
 
     }
 
-    public function header()
+    public function logout(Request $request)
     {
-        return view('home.deletethis');
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
+
+    public function loginadmincheck(Request $request)
+    {
+        // dd($request);
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/admin');
+        }
+
+        return back()->withErrors([
+            'error' => 'These credentials do not match our records.',
+        ])->onlyInput('email');
+    }
+
+
 }

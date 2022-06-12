@@ -123,7 +123,11 @@
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
-												<img src="{{asset('assets')}}/admin/plugin/img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+												@auth
+                                                    <img src="{{asset('assets')}}/admin/plugin/img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+                                                @else
+                                                    <img  src="{{asset('assets')}}/admin/plugin/img/avatars/avatar" class="avatar img-fluid rounded-circle" alt="Guest">
+                                                @endauth
 											</div>
 											<div class="col-10 ps-2">
 												<div class="text-dark">Sharon Lessman</div>
@@ -144,16 +148,34 @@
                             </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                                <img src="{{asset('assets')}}/admin/plugin/img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                                @auth
+                                    <img src="{{asset('assets')}}/admin/plugin/img/avatars/avatar-1.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall"/> <span class="text-dark">
+                                @else
+                                    <img src="{{asset('assets')}}/admin/plugin/img/avatars/avatar.png" class="avatar img-fluid rounded me-1" alt="Guest" style="width:30px; height:30px;">
+                                @endauth
+                                @auth
+                                    {{ Auth::user()->name }}
+                                @endauth
+                                @guest
+                                    Guest
+                                @endguest
+                            </span>
                             </a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Log out</a>
+								@auth
+                                    <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+                                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
+                                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{route('logoutuser')}}">Log out</a>
+                                @endauth
+                                @guest
+                                    <a class="dropdown-item" href="/loginadmin">Log in</a>
+                                    <a class="dropdown-item" href="/registeruser">Sign up</a>
+
+                                @endguest
 							</div>
 						</li>
 					</ul>
