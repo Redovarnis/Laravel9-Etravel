@@ -60,7 +60,7 @@
                             @auth
                                 <a class="fa-user noselect">{{Auth::user()->name}}</a>
                                 <ul>
-                                    <li><a href="" class="noselect">Dashboard</a></li>
+                                    <li><a href="{{route('userpanel.index')}}" class="noselect">Dashboard</a></li>
                                     <li><a href="/logoutuser" class="noselect">Logout</a></li>
                                 </ul>
                             @endauth
