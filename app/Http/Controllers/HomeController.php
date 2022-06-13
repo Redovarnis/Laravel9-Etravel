@@ -135,6 +135,37 @@ class HomeController extends Controller
         ]);
     }
 
+    public function createplace()
+    {
+        //
+        $data = Category::all();
+        return view('home.create', [
+            'data' => $data
+        ]);
+    }
+
+    public function storeplace(Request $request)
+    {
+        // dd($request); // Check your values
+        $data = new Place();
+        $data->category_id = $request->category_id;
+        $data->user_id = $request->user_id;
+        $data->title = $request->title;
+        $data->keywords = $request->keywords;
+        $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->city = $request->city;
+        $data->country = $request->country;
+        $data->location = $request->location;
+        $data->status = $request->status;
+        if ($request->file('image')) {
+            $data->image = $request->file('image')->store('images');
+        }
+        $data->save();
+
+        return redirect('/')->with('success', 'Your place has been sent successfully!');
+    }
+
     public function categoryplaces($id)
     {
         $category = Category::find($id);

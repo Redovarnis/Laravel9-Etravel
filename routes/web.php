@@ -41,6 +41,8 @@ Route::view('/registeruser', 'home.register')->name('registeruser');
 Route::get('/logoutuser', [HomeController::class, 'logout'])->name('logoutuser');
 Route::view('/loginadmin', 'admin.login')->name('loginadmin');
 Route::post('/loginadmincheck', [HomeController::class, 'loginadmincheck'])->name('loginadmincheck');
+Route::post('/storeplace', [HomeController::class, 'storeplace'])->name('storeplace');
+Route::get('/createplace', [HomeController::class, 'createplace'])->name('createplace');
 
 //4- Route->Controller->View
 Route::get('/test', [HomeController::class, 'test'])->name('test');

@@ -8,6 +8,7 @@
     <div id="content">
         <div class="container background-white">
             <div class="row margin-vert-30">
+                <a href="{{route('createplace')}}"><button type="submit" class="btn btn-primary pull-right center"><i class="fa fa-shopping-art">Add Listing</i></button></a>
                 <!-- Main Column -->
                 <div class="col-md-9">
                     <div class="blog-post">

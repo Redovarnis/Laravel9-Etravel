@@ -132,7 +132,7 @@
 
                         <!-- Portfolio Item -->
                         <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
-                            <a href="#">
+                            <a href="{{route('place', ['id'=>$singlers->id])}}">
                                 <figure class="animate fadeInLeft">
                                     <img alt="image1" src="{{Storage::url($singlers->image)}}" style="height: 210px; width: 397px;">
                                     <figcaption style="height:200px;">
