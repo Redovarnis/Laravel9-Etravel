@@ -98,6 +98,7 @@
                                         @endfor
                                          ({{$singlers->comment->count('id')}})
                                     </div>
+                                    <a href="{{route('shopcart.add', ['id'=>$singlers->id])}}" class="center2 btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
                                 </a>
                             </div>
                         @endforeach

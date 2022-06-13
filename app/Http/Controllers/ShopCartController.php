@@ -83,9 +83,21 @@ class ShopCartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function add($id)
     {
-        //
+        $data = ShopCart::where('place_id', $id)->where('user_id', Auth::id())->first();
+        if($data)
+        {
+            $data->quantity = $data->quantity + 1;
+        } else {
+            $data = new ShopCart();
+            $data->place_id = $id;
+            $data->user_id = Auth::id();
+            $data->quantity = 1;
+        }
+        $data->save();
+
+        return redirect()->back()->with('info', 'Place added to the cart');
     }
 
     /**
