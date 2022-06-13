@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\ShopCart;
+use App\Models\Order;
+use App\Models\OrderPlace;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -64,6 +66,55 @@ class ShopCartController extends Controller
         $data->save();
 
         return redirect()->back()->with('info', 'Place added to the cart');
+    }
+
+    public function order(Request $request)
+    {
+        $total = 0;
+        return view("home.order", [
+            'total'=>$total
+        ]);
+    }
+
+    public function storeorder(Request $request)
+    {
+        $cardcheck = 'True';
+        if ($cardcheck=='True') {
+            $data = New Order();
+            $data->name= $request->input('name');
+            $data->address= $request->input('address');
+            $data->email = $request->input('email');
+            $data->phone= $request->input('phone');
+            $data->total = $request->input('total');
+            $data->user_id= Auth::id();
+            $data->IP = $_SERVER['REMOTE_ADDR'];
+            $data->save();
+
+            $datalist = Shopcart::where('user_id', Auth::id())->get();
+            foreach ($datalist as $rs) {
+                $data2 = new OrderPlace();
+                $data2->user_id = Auth::id();
+                $data2->place_id = $rs->place_id;
+                $data2->order_id = $data->id;
+                $data2->price = 0;
+                $data2->quantity = $rs->quantity;
+                $data2->amount = 0;
+                $data2->save();
+            }
+            $data3 = Shopcart::where('user_id', Auth::id());
+            $data3->delete();
+
+            return redirect()->route('shopcart.ordercomplete')->with('succes', 'Place Order Successfully Added!');
+        }
+        else {
+            return redirect()->route('shopcart.ordercomplete')->with('error', 'Your credit card is not valid!');
+        }
+    }
+
+    // write a ordercomplete function
+    public function ordercomplete()
+    {
+        return view('home.ordercomplete');
     }
 
     /**

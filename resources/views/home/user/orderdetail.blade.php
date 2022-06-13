@@ -1,6 +1,6 @@
 @extends('layouts.frontbase')
 
-@section('title', 'User ShopCart')
+@section('title', 'User Detail')
 
 @section('content')
     <div id="content">
@@ -8,7 +8,7 @@
             <ul class="list-inline" style="margin-top: 50px">
                 <li><a href="{{ route('home') }}">Home</a></li>
                 <li>></li>
-                <li><a href="">User ShopCart</a></li>
+                <li><a href="">User Detail</a></li>
             </ul>
         </div>
     </div>
@@ -33,7 +33,7 @@
                 <div class="col-md-9">
                     <!-- Main Content -->
                     <div class="headline">
-                        <h2>User ShopCart</h2>
+                        <h2>User Detail</h2>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -42,6 +42,23 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="table-responsive">
+                                                <table class="table table-striped">
+                                                    <tr>
+                                                        <th>Name :</th> <td>{{$order->name}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Phone :</th> <td>{{$order->phone}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Email :</th> <td>{{$order->email}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Address :</th> <td>{{$order->address}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Note :</th> <td>{{$order->note}}</td>
+                                                    </tr>
+                                                </table>
                                                 <table class="table table-striped">
                                                     <thead>
                                                     <tr>
@@ -53,37 +70,20 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    @foreach($cart as $item)
+                                                    @foreach($orderplace as $rs)
                                                         <tr>
-                                                            <td>{{ $item->id }}</td>
-                                                            <td><a href="{{route('place', ['id'=>$item->place->id])}}">{{ $item->place->title }}</a></td>
-                                                            <td><a href="{{route('place', ['id'=>$item->place->id])}}"><img src="{{ Storage::url($item->place->image) }}" alt="" style="width: 60px; height: 60px;"/></td></a>
+                                                            <td>{{ $rs->id }}</td>
+                                                            <td><a href="{{route('place', ['id'=>$rs->place->id])}}">{{ $rs->place->title }}</a></td>
+                                                            <td><a href="{{route('place', ['id'=>$rs->place->id])}}"><img src="{{ Storage::url($rs->place->image) }}" alt="" style="width: 60px; height: 60px;"/></td></a>
+                                                            <td>{{$rs->quantity}}</td>
                                                             <td>
-                                                                <form action="{{route('shopcart.update', ['id'=>$item->id])}}" method="POST">
-                                                                    @csrf
-                                                                    <div class="input-group">
-                                                                        <input class="input form-control input-number" name="quantity" type="number"  value="{{$item->quantity}}" min="1" max="{{$item->place->quantity}}" onchange="this.form.submit()">
-                                                                    </div>
-                                                                </form>
-                                                            </td>
-                                                            <td>
-                                                                <a href="{{route('shopcart.destroy', ['id'=>$item->id])}}"
+                                                                <a href="#"
                                                                     class="btn btn-danger"><i class="fa fa-close"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
                                                     </tbody>
                                                 </table>
-                                                @php
-                                                    $total = 0;
-                                                @endphp
-                                                <div class="pull-right">
-                                                    <form action="{{route("shopcart.order")}}" method="post">
-                                                        @csrf
-                                                        <input name="total" value={{$total}} type="hidden">
-                                                        <button type="submit" class="btn-primary form-control">Checkout</button>
-                                                    </form>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Comment;
+use App\Models\Order;
+use App\Models\OrderPlace;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -23,6 +24,25 @@ class UserController extends Controller
         $comments = Comment::where('user_id', '=', Auth::id())->get();
         return view('home.user.comments', [
             'comments' => $comments
+        ]);
+    }
+
+    public function orderdetail($id)
+    {
+        $order = Order::find($id);
+        $orderplace = OrderPlace::where('order_id', '=', $id)->get();
+
+        return view('home.user.orderdetail', [
+            'order' => $order,
+            'orderplace' => $orderplace
+        ]);
+    }
+
+    public function orders()
+    {
+        $data = Order::where('user_id', '=', Auth::id())->get();
+        return view('home.user.orders', [
+            'data' => $data
         ]);
     }
 

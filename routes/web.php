@@ -70,6 +70,8 @@ Route::middleware('auth')->group(function() {
         Route::get('/', 'index')->name('index');
         Route::get('/reviews', 'reviews')->name('reviews');
         Route::get('/reviewdestroy/{id}', 'reviewdestroy')->name('reviewdestroy');
+        Route::get('/orders', 'orders')->name('orders');
+        Route::get('/orderdetail/{id}', 'orderdetail')->name('orderdetail');
     });
 
     // ****************** ShopCart ROUTES ****************************************
@@ -81,6 +83,9 @@ Route::middleware('auth')->group(function() {
         Route::post('/update/{id}', 'update')->name('update');
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
+        Route::post('/order', 'order')->name('order');
+        Route::post('/storeorder', 'storeorder')->name('storeorder');
+        Route::get('/ordercomplete', 'ordercomplete')->name('ordercomplete');
     });
 
 
