@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Comment;
+use App\Models\ShopCart;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
@@ -69,5 +70,10 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class,'role_users');
+    }
+
+    public function shopcart()
+    {
+        return $this->hasMany(ShopCart::class);
     }
 }

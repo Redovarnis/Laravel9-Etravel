@@ -19,4 +19,10 @@ class Place extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    // one To Many
+    public function shopCart()
+    {
+        return $this->hasMany(ShopCart::class);
+    }
 }

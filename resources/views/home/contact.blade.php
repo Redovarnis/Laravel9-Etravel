@@ -19,7 +19,7 @@
         <div class="container background-white">
             <div class="row margin-vert-30">
                 <!-- Main Column -->
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <!-- Main Content -->
                     <div class="headline">
                         <h2>Contact Form</h2>
@@ -70,7 +70,7 @@
                 </div>
                 <!-- End Main Column -->
                 <!-- Side Column -->
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <!-- Recent Posts -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -80,19 +80,19 @@
                             {!! $setting->contact !!}
                             <ul class="list-unstyled">
                                 <li>
-                                    <i class="fa-phone color-primary"></i>+353-44-55-66</li>
+                                    <i class="fa-phone color-primary"></i>{{$setting->phone}}</li>
                                 <li>
-                                    <i class="fa-envelope color-primary"></i>info@example.com</li>
+                                    <i class="fa-envelope color-primary"></i><a href="mailto:{{$setting->email}}">{{$setting->email}}</a></li>
                                 <li>
-                                    <i class="fa-home color-primary"></i>http://www.example.com</li>
+                                    <i class="fa-home color-primary"></i><a href="{{$setting->smtpserver}}">{{$setting->smtpserver}}</a></li>
                             </ul>
                             <ul class="list-unstyled">
                                 <li>
-                                    <strong class="color-primary">Monday-Friday:</strong>9am to 6pm</li>
+                                    <strong class="color-primary">Monday-Friday:</strong> 9am to 6pm</li>
                                 <li>
-                                    <strong class="color-primary">Saturday:</strong>10am to 3pm</li>
+                                    <strong class="color-primary">Saturday:</strong> 10am to 3pm</li>
                                 <li>
-                                    <strong class="color-primary">Sunday:</strong>Closed</li>
+                                    <strong class="color-primary">Sunday:</strong> Closed</li>
                             </ul>
                         </div>
                     </div>
@@ -100,10 +100,10 @@
                     <!-- About -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">About</h3>
+                            <a href="{{route('about')}}"><h3 class="panel-title">About Us</h3></a>
                         </div>
                         <div class="panel-body">
-                            Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat.
+                            {!! $setting->description !!}
                         </div>
                     </div>
                     <!-- End About -->

@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ShopCart;
 use Illuminate\Http\Request;
-use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+
+
+class ShopCartController extends Controller
 {
+
+    public static function countshopcart()
+    {
+        return ShopCart::where('user_id', Auth::id())->count();
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,14 +25,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('home.user.index');
-    }
-
-    public function reviews()
-    {
-        $comments = Comment::where('user_id', '=', Auth::id())->get();
-        return view('home.user.comments', [
-            'comments' => $comments
+        //
+        $cart = ShopCart::where('user_id', Auth::id())->get();
+        return view('home.user.shopcart',[
+            'cart' => $cart
         ]);
     }
 
@@ -44,7 +50,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = $request->id;
+        $data = ShopCart::where('place_id', $id)->where('user_id', Auth::id())->first();
+        if($data){
+            $data->quantity = $data->quantity + $request->input('quantity');
+        } else {
+            $data = new ShopCart();
+            $data->place_id = $id;
+            $data->user_id = Auth::id();
+            $data->quantity = $request->input('quantity');
+        }
+
+        $data->save();
+
+        return redirect()->back()->with('info', 'Place added to the cart');
     }
 
     /**
@@ -78,7 +97,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // write a code to update the shopcart
+        $data = ShopCart::find($id);
+        $data->quantity = $request->input('quantity');
+        $data->save();
+
+        return redirect()->back()->with('info', 'Quantity updated');
     }
 
     /**
@@ -90,12 +114,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function reviewdestroy($id)
-    {
-        $data = Comment::find($id);
+        $data = ShopCart::find($id);
         $data->delete();
-        return redirect(route('userpanel.reviews'));
+        return redirect()->back()->with('info', 'Place removed from the cart');
     }
 }

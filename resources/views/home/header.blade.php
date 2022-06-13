@@ -41,7 +41,7 @@
                             <a href="{{route('home')}}" class="fa-home noselect">Home</a>
                         </li>
                         <li>
-                            <span class="fa-gears noselect">Categories</span>
+                            <span class="fa-gears noselect">Cat.</span>
                             <ul>
                                 @foreach ($mainCategories as $rs)
                                     <li class="@if (count($rs->children)) parent @endif"><a class="noselect">{{ $rs->title }}</a>
@@ -54,13 +54,18 @@
                         </li>
                         <li><a href="{{route('faq')}}" class="fa-comment noselect">FAQ</a></li>
                         <li><a href="{{route('about')}}" class="fa-comment noselect">About</a></li>
-                        <li><a href="{{route('contact')}}" class="fa-comment noselect">Contact</a></li>
-                        <li><a href="{{route('references')}}" class="fa-comment noselect">References</a></li>
+                        <li><a href="{{route('contact')}}" class="fa-comment noselect">Cont.</a></li>
+                        <li><a href="{{route('references')}}" class="fa-comment noselect">Refs.</a></li>
+                        <li>
+                            <a href="{{route('shopcart.index')}}"> <span class="fa fa-gift bigicon"></span>My Cart ({{
+                                \App\Http\Controllers\ShopCartController::countshopcart()
+                            }})</a>
                         <li class="pull-right">
                             @auth
                                 <a class="fa-user noselect">{{Auth::user()->name}}</a>
                                 <ul>
                                     <li><a href="{{route('userpanel.index')}}" class="noselect">Dashboard</a></li>
+                                    <li><a href="{{route('userpanel.reviews')}}" class="noselect">My Reviews</a></li>
                                     <li><a href="/logoutuser" class="noselect">Logout</a></li>
                                 </ul>
                             @endauth

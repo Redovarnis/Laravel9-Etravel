@@ -57,7 +57,7 @@
                             <h3 class="margin-bottom-10">Could not find the answer?</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in mauris tempor purus accumsan dignissim. Morbi risus nisl, adipiscing vel sagittis sit amet, condimentum vitae lectus. Pellentesque nec eros nulla. Vivamus
                                 nec ligula dolor. In facilisis suscipit gravida. Nunc malesuada.</p>
-                            <button type="button" class="btn btn-primary btn-sm">ASK A QUESTION</button>
+                            <a href="{{route('contact')}}"><button type="button" class="btn btn-primary btn-sm">ASK A QUESTION</button></a>
                         </div>
                     </div>
                 </div>

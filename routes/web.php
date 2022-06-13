@@ -11,6 +11,7 @@ use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ShopCartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,10 +65,21 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 // ****************** USER AUTH CONTROL ****************************************
 Route::middleware('auth')->group(function() {
 
-    // ****************** USER ROUTES ****************************************
+    // ****************** USER PANEL ROUTES ****************************************
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
         Route::get('/', 'index')->name('index');
+        Route::get('/reviews', 'reviews')->name('reviews');
+        Route::get('/reviewdestroy/{id}', 'reviewdestroy')->name('reviewdestroy');
+    });
 
+    // ****************** ShopCart ROUTES ****************************************
+    Route::prefix('/shopcart')->name('shopcart.')->controller(ShopCartController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+        Route::get('/show/{id}', 'show')->name('show');
     });
 
 

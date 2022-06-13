@@ -122,29 +122,44 @@
                                     </div>
                             </div>
                             <!-- === END SLIDER === -->
-                            <div id="pre-header" class="container" style="height: 40px">
+                            <div id="pre-header" class="container" style="height: 40px"></div>
                                 <!-- Spacing below slider -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4">
+                                            <form action="{{route('shopcart.store')}}" method="POST">
+                                                @csrf
+                                                <div class="input-group">
+                                                    <input class="input form-control input-number" name="quantity" type="number"  value="1" min="1">
+                                                    <input class="input" name="id" value="{{$data->id}}" type="hidden">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary pull-right center"><i class="fa fa-shopping-cart">Add to cart</i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                                <div class="col-md-5">
-                                    <img class="margin-bottom-20" src="{{Storage::url($data->image)}}" alt="image1" style="width:300px; height:165.38px;">
-                                </div>
-                                <div class="col-md-7">
-                                    <p>{{$data->description}}</p>
-
-                                </div>
-                                <div class="col-md-12">
+                            <div class="col-md-5">
+                                <img class="margin-bottom-20" src="{{Storage::url($data->image)}}" alt="image1" style="width:300px; height:165.38px;">
+                            </div>
+                            <div class="col-md-7">
+                                <p>{{$data->description}}</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p>
+                                    {!! $data->detail !!}</p>
+                                <blockquote class="primary">
                                     <p>
-                                        {!! $data->detail !!}</p>
-                                    <blockquote class="primary">
-                                        <p>
-                                            <em>"{{$data->description}}"</em>
-                                        </p>
-                                        <small>
-                                            Someone famous in
-                                            <cite title="Source Title">Source Title</cite>
-                                        </small>
-                                    </blockquote>
-                                </div>
+                                        <em>"{{$data->description}}"</em>
+                                    </p>
+                                    <small>
+                                        Someone famous in
+                                        <cite title="Source Title">Source Title</cite>
+                                    </small>
+                                </blockquote>
+                            </div>
                             </div>
                             <div class="blog-item-footer">
                                 <!-- About the Author -->
