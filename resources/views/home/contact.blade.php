@@ -24,8 +24,8 @@
                     <div class="headline">
                         <h2>Contact Form</h2>
                     </div>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas feugiat. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit landitiis.</p>
+                    <p>If you want to work with us, just want to simply state your opinion or thanking us
+                        for what we are doing you can use the form below to get in contact and speak <a href="https://play-lh.googleusercontent.com/8ddL1kuoNUB5vUvgDVjYY3_6HwQcrg1K2fd_R8soD-e2QYj8fT9cfhfh3G0hnSruLKec"><i class="text-danger">among us</i></a>.</p>
                     <br>
                     <!-- Contact Form -->
                     @include('home.messages')

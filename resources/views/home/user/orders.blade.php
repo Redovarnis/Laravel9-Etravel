@@ -27,12 +27,12 @@
                     </div>
                     <!-- User Menu -->
                 </div>
-                <!-- User Comments -->
+                <!-- User Orders -->
                 <div class="col-md-9">
                     <div class="headline">
-                        <h2>User Comments & Review</h2>
+                        <h2>User Orders & Review</h2>
                     </div>
-                    <table class="table table-hover my-0" aria-labelledby="Comment List">
+                    <table class="table table-hover my-0" aria-labelledby="Order List">
                         <thead>
                             <tr>
                                 <th class="d-none d-md-table-cell">Id</th>
@@ -61,7 +61,7 @@
                         </tbody>
                     </table>
                     <br>
-                    <!-- End User Comments -->
+                    <!-- End User Orders -->
                 </div>
                 <!-- End Main Column -->
             </div>

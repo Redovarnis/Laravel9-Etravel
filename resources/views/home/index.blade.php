@@ -27,8 +27,8 @@
                     <i class="fa-tachometer fa-5x color-primary"></i>
                 </div>
                 <div class="col-md-8">
-                    <h2 class="margin-top-5 margin-bottom-0">3,474.5</h2>
-                    <p>WORKING HOURS</p>
+                    <h2 class="margin-top-5 margin-bottom-0">INFINITE</h2>
+                    <p>PERFORMANCE</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -36,8 +36,8 @@
                     <i class="fa-users fa-5x color-primary"></i>
                 </div>
                 <div class="col-md-8">
-                    <h2 class="margin-top-5 margin-bottom-0">3,474.5</h2>
-                    <p>WORKING HOURS</p>
+                    <h2 class="margin-top-5 margin-bottom-0">10,000+</h2>
+                    <p>People</p>
                 </div>
             </div>
         </div>
@@ -48,12 +48,13 @@
         <div class="row margin-vert-30">
             <!-- Main Text -->
             <div class="col-md-12">
-                <h2 class="text-center">Welcome to LifeStyle</h2>
-                <p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-                    lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                <p class="text-center">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
-                    augue duis dolore te feugait nulla facilisi. Cras non sem sem, at eleifend mi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Curabitur eget nisl
-                    a risus.</p>
+                <h2 class="text-center">Welcome to E-Travel</h2>
+                <p class="text-center">In this site you can find fantastic places to visit,
+                    and eat the cultural foods of the place you're visiting. Not only that
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, minus!</p>
+                <p class="text-center">Traveling soon? Save your amazing ideas all in one place with Trips. Save traveler-recommended places for your trip
+                    View the things to do, restaurants and hotels you saved on a map
+                    Easily access all your saves while traveling, wherever you go..</p>
             </div>
             <!-- End Main Text -->
         </div>
@@ -125,84 +126,26 @@
             <div class="col-md-10">
                 <!-- Portfolio -->
                 <ul class="portfolio-group">
-                    <!-- Portfolio Item -->
-                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
-                        <a href="#">
-                            <figure class="animate fadeInLeft">
-                                <img alt="image1" src="{{asset('assets')}}/img/frontpage/image1.jpg">
-                                <figcaption>
-                                    <h3>Placerat facer possim</h3>
-                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <!-- //Portfolio Item// -->
-                    <!-- Portfolio Item -->
-                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
-                        <a href="#">
-                            <figure class="animate fadeInRight">
-                                <img alt="image2" src="{{asset('assets')}}/img/frontpage/image2.jpg">
-                                <figcaption>
-                                    <h3>Placerat facer possim</h3>
-                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <!-- //Portfolio Item// -->
-                    <!-- Portfolio Item -->
-                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
-                        <a href="#">
-                            <figure class="animate fadeInLeft">
-                                <img alt="image3" src="{{asset('assets')}}/img/frontpage/image3.jpg">
-                                <figcaption>
-                                    <h3>Placerat facer possim</h3>
-                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <!-- //Portfolio Item// -->
-                    <!-- Portfolio Item -->
-                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
-                        <a href="#">
-                            <figure class="animate fadeInRight">
-                                <img alt="image4" src="{{asset('assets')}}/img/frontpage/image4.jpg">
-                                <figcaption>
-                                    <h3>Placerat facer possim</h3>
-                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <!-- //Portfolio Item// -->
-                    <!-- Portfolio Item -->
-                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
-                        <a href="#">
-                            <figure class="animate fadeInLeft">
-                                <img alt="image5" src="{{asset('assets')}}/img/frontpage/image5.jpg">
-                                <figcaption>
-                                    <h3>Placerat facer possim</h3>
-                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <!-- //Portfolio Item// -->
-                    <!-- Portfolio Item -->
-                    <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
-                        <a href="#">
-                            <figure class="animate fadeInRight">
-                                <img alt="image6" src="{{asset('assets')}}/img/frontpage/image6.jpg">
-                                <figcaption>
-                                    <h3>Placerat facer possim</h3>
-                                    <span>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui et everti tamquam suavitate mea.</span>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <!-- //Portfolio Item// -->
+                    @foreach ($placelist2 as $rs)
+                        @foreach ($rs as $singlers)
+
+
+                        <!-- Portfolio Item -->
+                        <li class="portfolio-item col-sm-6 col-xs-6 padding-20">
+                            <a href="#">
+                                <figure class="animate fadeInLeft">
+                                    <img alt="image1" src="{{Storage::url($singlers->image)}}" style="height: 210px; width: 397px;">
+                                    <figcaption style="height:200px;">
+                                        <h3>{{$singlers->title}}</h3>
+                                        <span>{{$singlers->description}}</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <!-- //Portfolio Item// -->
+                        @endforeach
+                    @endforeach
                 </ul>
                 <!-- End Portfolio -->
             </div>
@@ -218,7 +161,7 @@
                 <h2 class="animate fadeIn text-center">WE ARE CURRENTLY HIRING!</h2>
                 <p class="animate fadeIn text-center">If you like to work with a creative team in a lively and friendly enviroment then call us today!.</p>
                 <p class="animate fadeInUp text-center">
-                    <button class="btn btn-primary btn-lg" type="button">View Details</button>
+                    <a href="{{route('contact')}}"><button class="btn btn-primary btn-lg" type="button">View Details</button></a>
                 </p>
             </div>
         </div>

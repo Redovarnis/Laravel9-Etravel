@@ -13,8 +13,6 @@
                                 <i class="align-middle" data-feather="plus-square"></i>
                                 Add Place</button>
                         </a>
-                        <button type="button" class="btn btn-secondary">Middle</button>
-                        <button type="button" class="btn btn-secondary">Right</button>
                     </div>
                     <div class="row">
                         <div class="col-12">

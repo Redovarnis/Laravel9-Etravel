@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comment;
 use App\Models\Order;
 use App\Models\OrderPlace;
 use Illuminate\Support\Facades\Auth;
